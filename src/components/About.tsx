@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
-import founderPhoto from "@/assets/founder-photo.png";
+import foundersPhoto from "@/assets/founders-photo.jpg";
 
 const About = () => {
   return (
@@ -49,8 +49,8 @@ const About = () => {
                 }}
               >
                 <img 
-                  src={founderPhoto} 
-                  alt="Curtis Emmanuel Lovegren, Founder of EclipsePulse"
+                  src={foundersPhoto} 
+                  alt="Curtis and Ivan Lovegren, Founders of EclipsePulse"
                   className="w-full h-auto object-cover rounded-2xl"
                   style={{
                     maskImage: 'linear-gradient(to right, transparent 0px, black 15px, black calc(100% - 15px), transparent 100%), linear-gradient(to bottom, transparent 0px, black 15px, black calc(100% - 15px), transparent 100%)',
