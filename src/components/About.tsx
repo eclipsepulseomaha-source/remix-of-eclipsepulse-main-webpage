@@ -9,13 +9,13 @@ const About = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-br from-secondary via-accent to-primary bg-clip-text text-transparent">Founders</span>
-          </h2>
-          
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-br from-secondary via-accent to-primary bg-clip-text text-transparent">Founders</span>
+              </h2>
+              
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
