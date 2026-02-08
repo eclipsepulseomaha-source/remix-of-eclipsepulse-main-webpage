@@ -24,7 +24,7 @@ const About = () => {
                   Brothers who both grew up in Omaha, and after two decades each helping businesses on the East and West Coast, we've come home to serve the city that raised us.
                 </p>
                 <p>
-                  Our goal is to helping local businesses use tech to save time and scale with confidence.
+                  Our goal is to help local businesses use tech to save time and scale with confidence.
                 </p>
                 <p>
                   Our hands-on technical education started early, alongside our dad in the 1990s as he helped small Omaha businesses get online - installing modems, wiring offices, and supporting teams as technology changed how commerce worked. We see AI as the next practical advantage for small businesses when it's implemented the right way.
