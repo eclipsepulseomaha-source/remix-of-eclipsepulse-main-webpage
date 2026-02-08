@@ -21,7 +21,7 @@ const About = () => {
                   <strong className="text-foreground">Curtis Emmanuel Lovegren + Ivan Lovegren</strong>
                 </p>
                 <p>
-                  We grew up in Omaha, and after two decades each helping businesses on the East Coast and West Coast, we've both come home to bring that experience back to the city that raised us.
+                  Brothers who both grew up in Omaha, and after two decades each helping businesses on the East and West Coast, we've come home to serve the city that raised us.
                 </p>
                 <p>
                   Our goal is to helping local businesses use tech to save time and scale with confidence.
