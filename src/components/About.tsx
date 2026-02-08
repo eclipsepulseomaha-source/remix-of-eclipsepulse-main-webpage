@@ -17,7 +17,7 @@ const About = () => {
               </h2>
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
+                <p className="text-center">
                   <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
                 </p>
                 <p>
