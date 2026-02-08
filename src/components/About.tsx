@@ -18,25 +18,20 @@ const About = () => {
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Hi, I'm <strong className="text-foreground">Curtis Emmanuel Lovegren</strong>, 
-                  founder of EclipsePulse. I started this company with one simple goal: 
-                  make AI accessible to local businesses.
+                  <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
                 </p>
                 <p>
-                  I've seen too many small businesses struggle to keep up with big corporations 
-                  that have huge tech budgets. That's not fair. With EclipsePulse, you get 
-                  the same smart technology at a price that makes sense.
+                  We grew up in Omaha, and in recent years, we've returned to the city we're proud to call home. We are grateful to be part of this city again and to serve the businesses that make it thrive.
                 </p>
                 <p>
-                  Based right here in Omaha, Nebraska, I work directly with each client 
-                  to understand their unique needs. No corporate runaround—just honest, 
-                  effective AI solutions.
+                  Our hands-on technical education began beside our dad who was helping small Omaha businesses get online in the early 1990s, installing modems, wiring offices, and literally connecting people to a new future. Back then, connectivity gave local businesses new power in a rapidly changing world. Today, we see AI as another practical tool to help local businesses compete.
                 </p>
-              </div>
-
-              <div className="flex items-center gap-2 mt-6 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-accent" />
-                <span>Proudly serving businesses in Omaha, NE and surrounding areas</span>
+                <p>
+                  Our aim is not just to keep Omaha businesses current with where commerce is headed. We want to help move them forward. We work with local companies to build and manage AI chatbots, and the surrounding digital pieces that make them work well, so they can operate with more confidence, more capacity, and more freedom to focus on what they do best.
+                </p>
+                <p>
+                  This is ultimately about loyalty to the community that raised us and partnership with the people who keep it running. That is the spirit behind Eclipse Pulse, built to power Omaha businesses as you continue to grow and evolve, with us alongside you.
+                </p>
               </div>
 
               <Button variant="gradient" size="lg" className="mt-8 group">
