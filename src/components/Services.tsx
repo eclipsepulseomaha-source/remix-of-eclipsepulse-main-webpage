@@ -39,7 +39,7 @@ const Services = () => {
   return (
     <section id="services" className="pt-10 pb-12 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
-      <Fireflies count={28} />
+      <Fireflies count={35} />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-10">
