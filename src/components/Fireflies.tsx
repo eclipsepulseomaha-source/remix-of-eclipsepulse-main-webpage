@@ -62,7 +62,7 @@ const generateFireflies = (count: number): Firefly[] =>
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
-    size: 3 + Math.random() * 4,
+    size: 4.2 + Math.random() * 5.6,
     color: pickColor(),
     animationDuration: 48 + Math.random() * 72,
     glowDuration: 6 + Math.random() * 8,
