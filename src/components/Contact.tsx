@@ -35,6 +35,7 @@ const contactInfo = [
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
+    phone: "",
     email: "",
     business: "",
     message: "",
@@ -89,6 +90,15 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="bg-muted/50 border-border"
                     required
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="bg-muted/50 border-border"
                   />
                 </div>
                 <div>
