@@ -210,4 +210,22 @@
   .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
   .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
   .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+  /* Floating orb animations */
+  @keyframes float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.05); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+  }
+
+  @keyframes float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, 30px) scale(0.95); }
+    66% { transform: translate(25px, -40px) scale(1.05); }
+  }
+
+  @keyframes float-3 {
+    0%, 100% { transform: translate(0, 0) scale(1.05); }
+    50% { transform: translate(35px, 25px) scale(0.95); }
+  }
 }
