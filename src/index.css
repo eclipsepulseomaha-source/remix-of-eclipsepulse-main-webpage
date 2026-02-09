@@ -214,17 +214,20 @@
   /* Firefly glow animation (drift is now per-firefly via inline styles) */
 
   @keyframes firefly-glow {
-    0%, 100% {
+    0%, 12% {
       opacity: 0;
     }
-    15% {
+    25% {
       opacity: 0.9;
     }
     50% {
       opacity: 0.3;
     }
-    85% {
+    75% {
       opacity: 0.8;
+    }
+    88%, 100% {
+      opacity: 0;
     }
   }
 }
