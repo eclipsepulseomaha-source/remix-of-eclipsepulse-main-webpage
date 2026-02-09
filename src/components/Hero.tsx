@@ -73,8 +73,13 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gradient" size="xl" className="group">
-              Get Your Free Demo
+            <Button
+              variant="gradient"
+              size="xl"
+              className="group"
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Get Straight to Us
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="xl">
