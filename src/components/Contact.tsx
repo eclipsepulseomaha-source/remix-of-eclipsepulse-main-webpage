@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
+import Fireflies from "@/components/Fireflies";
 
 const contactInfo = [
   {
@@ -49,8 +50,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="pt-12 pb-24 relative">
+    <section id="contact" className="pt-12 pb-24 relative overflow-hidden">
       <div className="absolute inset-0 gradient-bg opacity-50" />
+      <Fireflies count={16} />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-8">
