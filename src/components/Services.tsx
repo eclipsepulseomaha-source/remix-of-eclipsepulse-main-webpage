@@ -1,4 +1,4 @@
-import { MessageSquare, Zap, Clock, Users, BarChart3, Shield } from "lucide-react";
+import { MessageSquare, Zap, Clock, Users, Heart, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
@@ -23,7 +23,7 @@ const services = [
     description: "You'll always have direct access to me as your human point of contact. The chatbot simply works behind the scenes, seamlessly supporting and enhancing the systems you already use. It helps your business do more — without changing how you prefer to work.",
   },
   {
-    icon: BarChart3,
+    icon: Heart,
     title: "Analytics & Insights",
     description: "See what your customers are asking about most. Use this info to improve your business and answer questions before they're asked.",
   },
