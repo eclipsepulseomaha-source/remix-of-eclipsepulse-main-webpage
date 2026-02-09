@@ -21,7 +21,7 @@ const About = () => {
                   <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
                 </p>
                 <p>
-                  We grew up in Omaha, and in recent years, we've returned to the city we're proud to call home. We are grateful to be part of this city again and to serve the businesses that make it thrive.
+                  We grew up in Omaha, and after years of working with businesses on the East and West Coasts, we've come back home to bring that experience to the work we do here. We are grateful to be part of this city again and to serve the businesses that make it thrive.
                 </p>
                 <p>
                   Our hands-on technical education began beside our dad who was helping small Omaha businesses get online in the early 1990s, installing modems, wiring offices, and literally connecting people to a new future. Back then, connectivity gave local businesses new power in a rapidly changing world. Today, we see AI as another practical tool to help local businesses compete.
