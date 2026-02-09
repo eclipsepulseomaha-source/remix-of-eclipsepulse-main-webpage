@@ -4,7 +4,7 @@ import foundersPhoto from "@/assets/founders-photo.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="pt-24 pb-8 relative">
+    <section id="about" className="pt-4 pb-8 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-muted/10 via-background to-muted/10" />
       
       <div className="container mx-auto px-4 relative z-10">
