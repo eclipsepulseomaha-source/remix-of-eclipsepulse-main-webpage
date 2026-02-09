@@ -1,5 +1,6 @@
 import { MessageSquare, Zap, Clock, Users, Heart, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import SplineBackground from "@/components/SplineBackground";
 
 const services = [
   {
@@ -36,7 +37,8 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="pt-10 pb-12 relative">
+    <section id="services" className="pt-10 pb-12 relative overflow-hidden">
+      <SplineBackground />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
       
       <div className="container mx-auto px-4 relative z-10">
