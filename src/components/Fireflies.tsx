@@ -105,17 +105,24 @@ const Fireflies = ({ count = 18 }: FirefliesProps) => {
       {fireflies.map((fly) => (
         <div
           key={fly.id}
-          className="absolute rounded-full"
+          className="absolute"
           style={{
             left: `${fly.x}%`,
             top: `${fly.y}%`,
-            width: fly.size,
-            height: fly.size,
-            backgroundColor: COLOR_MAP[fly.color],
-            boxShadow: `0 0 ${fly.size * 2}px ${fly.size}px ${GLOW_MAP[fly.color]}`,
+            width: fly.size * 3,
+            height: fly.size * 3,
+            filter: `drop-shadow(0 0 ${fly.size * 2}px ${GLOW_MAP[fly.color]})`,
             animation: `firefly-path-${fly.id} ${fly.animationDuration}s ease-in-out infinite, firefly-glow ${fly.glowDuration}s ease-in-out ${fly.glowDelay}s infinite`,
           }}
-        />
+        >
+          <svg viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            {/* 8-point starburst */}
+            <polygon
+              points="50,0 53,40 80,6 56,42 100,50 56,58 80,94 53,60 50,100 47,60 20,94 44,58 0,50 44,42 20,6 47,40"
+              fill={COLOR_MAP[fly.color]}
+            />
+          </svg>
+        </div>
       ))}
     </div>
   );
