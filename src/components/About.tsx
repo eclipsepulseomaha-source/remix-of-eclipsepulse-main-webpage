@@ -4,7 +4,7 @@ import foundersPhoto from "@/assets/founders-photo.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="pt-4 pb-4 relative">
+    <section id="about" className="pt-4 pb-8 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-muted/10 via-background to-muted/10" />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -13,12 +13,7 @@ const About = () => {
             {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center">
-                <span 
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: 'linear-gradient(to bottom right, hsl(var(--secondary)) 0%, hsl(var(--secondary)) 25%, hsl(var(--primary)) 100%)'
-                  }}
-                >Founders</span>
+                <span className="bg-gradient-to-br from-secondary via-primary via-[35%] to-primary bg-clip-text text-transparent">Founders</span>
               </h2>
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
