@@ -37,13 +37,8 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button 
-              variant="gradient" 
-              size="lg"
-              className="font-bold text-primary-foreground/90"
-              style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)' }}
-            >
-              Ask Away
+            <Button variant="gradient" size="lg">
+              Get Started
             </Button>
           </div>
 
@@ -71,13 +66,8 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button 
-                variant="gradient" 
-                size="lg" 
-                className="mt-2 font-bold text-primary-foreground/90"
-                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)' }}
-              >
-                Ask Away
+              <Button variant="gradient" size="lg" className="mt-2">
+                Get Started
               </Button>
             </div>
           </div>
