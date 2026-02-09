@@ -64,7 +64,7 @@ const generateFireflies = (count: number): Firefly[] =>
     y: Math.random() * 100,
     size: 3 + Math.random() * 4,
     color: pickColor(),
-    animationDuration: 24 + Math.random() * 36,
+    animationDuration: 48 + Math.random() * 72,
     glowDuration: 6 + Math.random() * 8,
     glowDelay: Math.random() * 12,
     waypoints: generateWaypoints(),
