@@ -63,68 +63,68 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Contact Options */}
-          <div className="space-y-6">
-            {/* Chatbot Option */}
-            <Card className="bg-gradient-to-r from-primary via-accent to-secondary border-0 overflow-hidden">
-              <CardContent className="p-6 md:p-8">
-                <h3 className="text-xl font-bold text-primary-foreground drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 -1px 0 rgba(255,255,255,0.2)' }}>
+          {/* Contact Form */}
+          <Card className="bg-card/50 backdrop-blur border-border">
+            <CardContent className="p-6 md:p-8">
+              <h3 className="text-xl font-semibold mb-6 text-foreground">
+                Send Us a Message
+              </h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Chatbot Button */}
+                <Button
+                  type="button"
+                  className="w-full h-10 justify-start px-3 bg-gradient-to-r from-primary via-accent to-secondary border-0 text-primary-foreground font-bold"
+                  style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 -1px 0 rgba(255,255,255,0.2)' }}
+                  onClick={() => {
+                    // TODO: Navigate to chatbot page
+                    console.log("Navigate to chatbot");
+                  }}
+                >
                   Use Our Chatbot
-                </h3>
-              </CardContent>
-            </Card>
-
-            {/* Contact Form */}
-            <Card className="bg-card/50 backdrop-blur border-border">
-              <CardContent className="p-6 md:p-8">
-                <h3 className="text-xl font-semibold mb-6 text-foreground">
-                  Send Us a Message
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <Input
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="bg-muted/50 border-border"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Email Address"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="bg-muted/50 border-border"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      placeholder="Business Name"
-                      value={formData.business}
-                      onChange={(e) => setFormData({ ...formData, business: e.target.value })}
-                      className="bg-muted/50 border-border"
-                    />
-                  </div>
-                  <div>
-                    <Textarea
-                      placeholder="Tell us about your business and what you're looking for..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="bg-muted/50 border-border min-h-32"
-                      required
-                    />
-                  </div>
-                  <Button type="submit" variant="gradient" size="lg" className="w-full group">
-                    Send Message
-                    <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
+                </Button>
+                <div>
+                  <Input
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="bg-muted/50 border-border"
+                    required
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="bg-muted/50 border-border"
+                    required
+                  />
+                </div>
+                <div>
+                  <Input
+                    placeholder="Business Name"
+                    value={formData.business}
+                    onChange={(e) => setFormData({ ...formData, business: e.target.value })}
+                    className="bg-muted/50 border-border"
+                  />
+                </div>
+                <div>
+                  <Textarea
+                    placeholder="Tell us about your business and what you're looking for..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="bg-muted/50 border-border min-h-32"
+                    required
+                  />
+                </div>
+                <Button type="submit" variant="gradient" size="lg" className="w-full group">
+                  Send Message
+                  <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
 
           {/* Contact Info */}
           <div className="space-y-6">
