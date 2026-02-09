@@ -82,9 +82,20 @@ const Hero = () => {
               Get Straight to Us
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="xl">
-              See How It Works
-            </Button>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary/40 via-accent/30 to-secondary/40 blur-xl opacity-60 animate-glow-pulse" />
+              <Button
+                variant="outline"
+                size="xl"
+                className="relative"
+                onClick={() => {
+                  // TODO: Navigate to chatbot page
+                  console.log("Navigate to chatbot");
+                }}
+              >
+                Meet Our Chatbot
+              </Button>
+            </div>
           </div>
 
           {/* Trust Indicators */}
