@@ -71,7 +71,7 @@ const BenefitItem = ({ title, description }: BenefitItemProps) => {
 
 const Benefits = () => {
   return (
-    <section id="benefits" className="pt-12 pb-8 relative overflow-hidden">
+    <section id="benefits" className="pt-12 pb-2 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
       <div className="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-r from-secondary/5 to-transparent" />
