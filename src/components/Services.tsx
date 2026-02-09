@@ -13,14 +13,14 @@ const services = [
     description: "Your chatbot never sleeps, takes breaks, or calls in sick. Customers get help any time of day or night, even on holidays. Appointments get booked, services get ordered, and requests get handled instantly — no phone calls, no hold times, no delays.",
   },
   {
-    icon: Zap,
-    title: "Seamless Integration",
-    description: "We install our chatbots right on your existing website. No rebuilding needed. It just works alongside what you already have.",
-  },
-  {
     icon: Users,
     title: "Human at Heart",
     description: "You'll always have direct access to me as your human point of contact. The chatbot simply works behind the scenes, seamlessly supporting and enhancing the systems you already use. It helps your business do more — without changing how you prefer to work.",
+  },
+  {
+    icon: Zap,
+    title: "Seamless Integration",
+    description: "We install our chatbots right on your existing website. No rebuilding needed. It just works alongside what you already have.",
   },
   {
     icon: Heart,
