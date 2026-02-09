@@ -70,7 +70,7 @@ const Contact = () => {
           <Card className="bg-card/50 backdrop-blur border-border">
             <CardContent className="p-6 md:p-8">
               <h3 className="text-xl font-semibold mb-6 text-foreground">
-                Send Us a Message
+                We'd Love to Talk
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Chatbot Button */}
