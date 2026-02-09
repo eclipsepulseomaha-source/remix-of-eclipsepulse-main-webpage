@@ -71,6 +71,9 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-primary-foreground drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 -1px 0 rgba(255,255,255,0.2)' }}>
                   Use Our Chatbot
                 </h3>
+                <p className="text-primary-foreground/80 text-sm mt-1">
+                  Get instant answers to your questions 24/7
+                </p>
               </CardContent>
             </Card>
 
