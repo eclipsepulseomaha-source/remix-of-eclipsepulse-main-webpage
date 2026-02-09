@@ -31,10 +31,10 @@ const generateFireflies = (count: number): Firefly[] =>
     y: Math.random() * 100,
     size: 3 + Math.random() * 4,
     color: (["blue", "orange", "amber"] as const)[Math.floor(Math.random() * 3)],
-    animationDuration: 12 + Math.random() * 18,
-    glowDelay: Math.random() * 8,
-    driftX: -40 + Math.random() * 80,
-    driftY: -40 + Math.random() * 80,
+    animationDuration: 24 + Math.random() * 36,
+    glowDelay: Math.random() * 12,
+    driftX: -120 + Math.random() * 240,
+    driftY: -120 + Math.random() * 240,
   }));
 
 interface FirefliesProps {
@@ -57,7 +57,7 @@ const Fireflies = ({ count = 18 }: FirefliesProps) => {
             height: fly.size,
             backgroundColor: COLOR_MAP[fly.color],
             boxShadow: `0 0 ${fly.size * 2}px ${fly.size}px ${GLOW_MAP[fly.color]}`,
-            animation: `firefly-drift ${fly.animationDuration}s ease-in-out infinite, firefly-glow ${3 + Math.random() * 4}s ease-in-out ${fly.glowDelay}s infinite`,
+            animation: `firefly-drift ${fly.animationDuration}s ease-in-out infinite, firefly-glow ${6 + Math.random() * 8}s ease-in-out ${fly.glowDelay}s infinite`,
             ["--drift-x" as string]: `${fly.driftX}px`,
             ["--drift-y" as string]: `${fly.driftY}px`,
           }}

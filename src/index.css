@@ -216,14 +216,23 @@
     0%, 100% {
       transform: translate(0, 0);
     }
-    25% {
-      transform: translate(var(--drift-x), calc(var(--drift-y) * -0.5));
+    12% {
+      transform: translate(calc(var(--drift-x) * 0.6), calc(var(--drift-y) * -0.3));
     }
-    50% {
-      transform: translate(calc(var(--drift-x) * -0.7), var(--drift-y));
+    28% {
+      transform: translate(var(--drift-x), calc(var(--drift-y) * 0.7));
     }
-    75% {
-      transform: translate(calc(var(--drift-x) * 0.4), calc(var(--drift-y) * -0.8));
+    42% {
+      transform: translate(calc(var(--drift-x) * -0.4), var(--drift-y));
+    }
+    58% {
+      transform: translate(calc(var(--drift-x) * -0.8), calc(var(--drift-y) * -0.5));
+    }
+    73% {
+      transform: translate(calc(var(--drift-x) * 0.3), calc(var(--drift-y) * -0.9));
+    }
+    88% {
+      transform: translate(calc(var(--drift-x) * 0.7), calc(var(--drift-y) * 0.4));
     }
   }
 
