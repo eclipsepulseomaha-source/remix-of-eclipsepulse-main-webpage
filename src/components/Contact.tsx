@@ -142,8 +142,8 @@ const Contact = () => {
               Get In Touch
             </h3>
             <p className="text-muted-foreground">
-              Prefer to reach out directly? We'd love to hear from you. 
-              Call, email, or stop by—we're here to help.
+              Reach out directly. We'd love to hear from you. 
+              Call or email—we're here to help.
             </p>
 
             <div className="space-y-4 mt-8">
