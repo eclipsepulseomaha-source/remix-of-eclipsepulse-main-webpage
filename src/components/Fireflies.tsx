@@ -132,7 +132,7 @@ const Fireflies = ({ count = 18 }: FirefliesProps) => {
             />
             <defs>
               <filter id="glow-blur" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="10" />
+                <feGaussianBlur stdDeviation="15" />
               </filter>
             </defs>
           </svg>
