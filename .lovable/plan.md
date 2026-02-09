@@ -1,26 +1,28 @@
 
 
-## Spline 3D Background Animation
+## Add Subtle Background Animations
 
-Add an animated Spline 3D sun background behind the **Services ("What We Do")** and **Contact ("Get In Touch")** sections.
+Add gentle, ambient light animations to the page background to create visual depth without overwhelming the content.
 
-### What will happen
+### What will change
 
-1. **Install `@splinetool/react-spline`** - the official React component for embedding Spline scenes.
+Add CSS-based animated gradient orbs/blobs that float slowly behind the page content. These will be subtle, low-opacity glowing shapes that drift around, giving the site a living, dynamic feel.
 
-2. **Create a reusable `SplineBackground` component** - wraps the Spline viewer as an absolute-positioned background layer with reduced opacity so it doesn't overpower the content.
+### Sections affected
 
-3. **Add the Spline background to two sections**:
-   - **Services section** (`src/components/Services.tsx`) - behind the "What We Do" cards
-   - **Contact section** (`src/components/Contact.tsx`) - behind the "Get In Touch" form and info
+- **Global background** (`src/pages/Index.tsx`) - Add floating gradient orbs that move slowly across the entire page behind all content
 
-The Spline scene URL: `https://my.spline.design/animatedsun-uPq1kFZWf9UOnPCq24b09KBv/`
+### Animation details
 
-### Technical Details
+- 2-3 soft gradient orbs (using the existing blue/orange brand colors) positioned absolutely behind content
+- Slow, looping float animations (15-20 second cycles) so they feel ambient, not distracting
+- Very low opacity (10-20%) and large blur radius so they look like soft light sources
+- All done with pure CSS (keyframes + pseudo-elements or divs), no extra dependencies needed
 
-- Install `@splinetool/react-spline` and `@splinetool/runtime` as dependencies
-- Create `src/components/SplineBackground.tsx` that renders the Spline scene as a background layer using `position: absolute`, `inset: 0`, `z-index: 0`, and `pointer-events: none`
-- Wrap both the Services and Contact sections with `position: relative` and `overflow: hidden` (already in place for Contact) so the animation stays contained
-- Existing content will remain above the background via `z-index: 10` (already using `relative z-10` in both sections)
-- The Spline component will be lazy-loaded to avoid slowing down initial page load
+### Technical approach
+
+1. **`src/index.css`** - Add keyframes for slow floating/drifting motion
+2. **`src/pages/Index.tsx`** - Add 2-3 absolutely-positioned gradient orb divs behind the page content, each with different animation delays and positions for organic movement
+
+The Hero section and all other sections will remain fully visible and unaffected -- these orbs sit behind everything at `z-index: 0`.
 
