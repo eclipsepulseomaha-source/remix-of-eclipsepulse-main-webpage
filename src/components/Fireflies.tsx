@@ -27,9 +27,9 @@ const GLOW_MAP = {
 // Weighted: blue appears 3x more often than orange or amber
 const pickColor = (): "blue" | "orange" | "amber" => {
   const r = Math.random();
-  if (r < 0.6) return "blue";       // 60% blue
-  if (r < 0.8) return "orange";     // 20% orange
-  return "amber";                    // 20% amber
+  if (r < 0.5) return "blue";        // 50% blue
+  if (r < 0.83) return "orange";     // 33% orange
+  return "amber";                    // 17% amber
 };
 
 // Generate 5-8 waypoints with minimum 25vw total path length
