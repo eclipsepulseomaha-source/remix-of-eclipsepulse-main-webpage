@@ -24,8 +24,8 @@ const services = [
   },
   {
     icon: Heart,
-    title: "Analytics & Insights",
-    description: "See what your customers are asking about most. Use this info to improve your business and answer questions before they're asked.",
+    title: "And There's This, Too",
+    description: "We also support the digital pieces surrounding your core operations — building or refining websites, shaping sales templates, and aligning your systems so everything works together smoothly.",
   },
   {
     icon: Shield,
