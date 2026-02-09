@@ -210,4 +210,35 @@
   .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
   .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
   .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+  /* Firefly animations */
+  @keyframes firefly-drift {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(var(--drift-x), calc(var(--drift-y) * -0.5));
+    }
+    50% {
+      transform: translate(calc(var(--drift-x) * -0.7), var(--drift-y));
+    }
+    75% {
+      transform: translate(calc(var(--drift-x) * 0.4), calc(var(--drift-y) * -0.8));
+    }
+  }
+
+  @keyframes firefly-glow {
+    0%, 100% {
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.9;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    85% {
+      opacity: 0.8;
+    }
+  }
 }
