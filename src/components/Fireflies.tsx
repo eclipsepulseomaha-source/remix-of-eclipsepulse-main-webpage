@@ -32,22 +32,24 @@ const pickColor = (): "blue" | "orange" | "amber" => {
   return "amber";                    // 17% amber
 };
 
-// Generate 5-8 waypoints with minimum 25vw total path length
+// Generate 10-16 waypoints with long, curving paths
 const generateWaypoints = (): { x: number; y: number }[] => {
-  const count = 5 + Math.floor(Math.random() * 4); // 5-8 waypoints
+  const count = 10 + Math.floor(Math.random() * 7); // 10-16 waypoints
   const points: { x: number; y: number }[] = [];
 
-  // First waypoint: moderate distance from origin
+  // Start with a sweeping first move
+  let angle = Math.random() * Math.PI * 2;
+  const firstDist = 15 + Math.random() * 25;
   points.push({
-    x: -15 + Math.random() * 30,
-    y: -15 + Math.random() * 30,
+    x: Math.cos(angle) * firstDist,
+    y: Math.sin(angle) * firstDist,
   });
 
   for (let i = 1; i < count; i++) {
     const prev = points[i - 1];
-    // Each step moves at least 8vw in some direction, with randomness
-    const angle = Math.random() * Math.PI * 2;
-    const dist = 8 + Math.random() * 18; // 8-26vw per segment
+    // Bias angle to curve: drift ±60-120° from previous direction for arcing motion
+    angle += (Math.PI / 3) + Math.random() * (Math.PI / 2);
+    const dist = 16 + Math.random() * 36; // 16-52vw per segment
     points.push({
       x: prev.x + Math.cos(angle) * dist,
       y: prev.y + Math.sin(angle) * dist,
