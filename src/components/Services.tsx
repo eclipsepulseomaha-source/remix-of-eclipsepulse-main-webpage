@@ -36,7 +36,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="pt-16 pb-12 relative">
+    <section id="services" className="pt-10 pb-12 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
       
       <div className="container mx-auto px-4 relative z-10">
