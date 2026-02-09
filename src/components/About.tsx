@@ -13,7 +13,12 @@ const About = () => {
             {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center">
-                <span className="bg-gradient-to-br from-secondary via-primary to-primary bg-clip-text text-transparent">Founders</span>
+                <span 
+                  className="bg-clip-text text-transparent"
+                  style={{
+                    backgroundImage: 'linear-gradient(to bottom right, hsl(var(--secondary)) 0%, hsl(var(--primary)) 30%)'
+                  }}
+                >Founders</span>
               </h2>
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
