@@ -34,7 +34,7 @@ const Footer = () => {
               <a href="#about" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
                 About the Guys
               </a>
-              <a href="#contact" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
+              <a href="#contact-form" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
                 Contact Us
               </a>
             </nav>
