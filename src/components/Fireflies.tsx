@@ -111,7 +111,7 @@ const Fireflies = ({ count = 18 }: FirefliesProps) => {
             top: `${fly.y}%`,
             width: fly.size * 3,
             height: fly.size * 3,
-            filter: `drop-shadow(0 0 ${fly.size * 2}px ${GLOW_MAP[fly.color]})`,
+            filter: `drop-shadow(0 0 ${fly.size * 4}px ${GLOW_MAP[fly.color]}) drop-shadow(0 0 ${fly.size * 6}px ${GLOW_MAP[fly.color]})`,
             animation: `firefly-path-${fly.id} ${fly.animationDuration}s ease-in-out infinite, firefly-glow ${fly.glowDuration}s ease-in-out ${fly.glowDelay}s infinite`,
           }}
         >
