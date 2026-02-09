@@ -121,7 +121,7 @@ const Fireflies = ({ count = 18 }: FirefliesProps) => {
             <polygon
               points="50,0 53,40 80,6 56,42 100,50 56,58 80,94 53,60 50,100 47,60 20,94 44,58 0,50 44,42 20,6 47,40"
               fill={COLOR_MAP[fly.color]}
-              opacity={0.3}
+              opacity={0.36}
               transform="scale(5) translate(-40, -40)"
               filter="url(#glow-blur)"
             />
