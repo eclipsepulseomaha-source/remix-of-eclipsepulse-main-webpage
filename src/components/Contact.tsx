@@ -4,7 +4,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
-import SplineBackground from "@/components/SplineBackground";
 
 const contactInfo = [
   {
@@ -50,8 +49,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="pt-12 pb-24 relative overflow-hidden">
-      <SplineBackground />
+    <section id="contact" className="pt-12 pb-24 relative">
       <div className="absolute inset-0 gradient-bg opacity-50" />
       
       <div className="container mx-auto px-4 relative z-10">
