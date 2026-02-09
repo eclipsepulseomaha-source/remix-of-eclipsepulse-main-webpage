@@ -16,7 +16,7 @@ const About = () => {
                 <span 
                   className="bg-clip-text text-transparent"
                   style={{
-                    backgroundImage: 'linear-gradient(to bottom right, hsl(var(--secondary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--primary)) 100%)'
+                    backgroundImage: 'linear-gradient(to bottom right, hsl(var(--secondary)) 0%, hsl(var(--secondary)) 25%, hsl(var(--primary)) 100%)'
                   }}
                 >Founders</span>
               </h2>
