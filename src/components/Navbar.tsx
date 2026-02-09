@@ -39,9 +39,9 @@ const Navbar = () => {
             ))}
             <Button 
               variant="gradient" 
-              size="lg"
-              className="font-bold"
-              style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 -1px 0 rgba(255,255,255,0.2)' }}
+              size="default"
+              className="font-bold text-primary-foreground/90"
+              style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)' }}
             >
               Chat With Clipsie, the Eclipse Pulse AI Assistant
             </Button>
@@ -73,9 +73,9 @@ const Navbar = () => {
               ))}
               <Button 
                 variant="gradient" 
-                size="lg" 
-                className="mt-2 font-bold"
-                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 -1px 0 rgba(255,255,255,0.2)' }}
+                size="default" 
+                className="mt-2 font-bold text-primary-foreground/90"
+                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)' }}
               >
                 Chat With Clipsie, the Eclipse Pulse AI Assistant
               </Button>
