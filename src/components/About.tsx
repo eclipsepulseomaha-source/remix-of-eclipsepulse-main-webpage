@@ -4,7 +4,7 @@ import foundersPhoto from "@/assets/founders-photo.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="pt-24 pb-8 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-muted/10 via-background to-muted/10" />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -33,11 +33,6 @@ const About = () => {
                   This is ultimately about loyalty to the community that raised us and partnership with the people who keep it running. That is the spirit behind Eclipse Pulse, built to power Omaha businesses as you continue to grow and evolve, with us alongside you.
                 </p>
               </div>
-
-              <Button variant="gradient" size="lg" className="mt-8 group">
-                Let's Talk
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
             </div>
 
             {/* Founder Photo */}
