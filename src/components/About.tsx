@@ -13,7 +13,7 @@ const About = () => {
             {/* Content */}
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center">
-                <span className="bg-gradient-to-br from-secondary via-accent to-primary bg-clip-text text-transparent">Founders</span>
+                <span className="bg-gradient-to-br from-primary via-accent to-secondary bg-clip-text text-transparent">Founders</span>
               </h2>
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
