@@ -16,7 +16,7 @@ const services = [
   {
     icon: Users,
     title: "Human at Heart",
-    description: "You'll always have direct access to me as your human point of contact. The chatbot simply works behind the scenes, seamlessly supporting and enhancing the systems you already use. It helps your business do more — without changing how you prefer to work.",
+    description: "You'll always have direct access to us as your human points of contact. The chatbot simply works behind the scenes, seamlessly supporting and enhancing the systems you already use. It helps your business do more — without changing how you prefer to work.",
   },
   {
     icon: Zap,
