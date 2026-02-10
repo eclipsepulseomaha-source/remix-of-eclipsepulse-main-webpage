@@ -109,6 +109,14 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    forced-color-adjust: none;
+    -ms-high-contrast-adjust: none;
+  }
+
+  /* Prevent OS contrast modes from adding outlines/boxes around text */
+  h1, h2, h3, h4, h5, h6, p, span, a, button, label, li, div {
+    forced-color-adjust: none;
+    -ms-high-contrast-adjust: none;
   }
 
   /* Gradient text utility */
