@@ -21,10 +21,10 @@ const benefits = [
 ];
 
 const stats = [
-  { value: "24/7", label: "Always Available" },
-  { value: "<5", label: "Seconds to Answers" },
-  { value: "3x", label: "More Leads Captured" },
   { value: "50%", label: "Less Time on Phone Support" },
+  { value: "24/7", label: "Always Available" },
+  { value: "3x", label: "More Leads Captured" },
+  { value: "<5", label: "Seconds to Answers" },
 ];
 
 interface BenefitItemProps {
