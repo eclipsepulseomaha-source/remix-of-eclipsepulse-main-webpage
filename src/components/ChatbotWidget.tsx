@@ -53,32 +53,54 @@ const ChatbotWidget = () => {
   return (
     <>
       {/* Floating Clipsie 3D button */}
-      <button
-        onClick={() => setIsOpen(true)}
+      <div
         className={cn(
-          "fixed bottom-6 right-6 z-50 h-[72px] w-[72px] rounded-full transition-all duration-150 focus:outline-none",
-          "pulse-glow",
-          "[transform-style:preserve-3d]",
-          // 3D depth via box-shadow "base"
-          "shadow-[0_6px_0_0_hsl(var(--primary)/0.5),0_8px_12px_0_hsl(var(--primary)/0.3)]",
-          // Press down on active
-          "active:translate-y-[4px] active:shadow-[0_2px_0_0_hsl(var(--primary)/0.5),0_3px_6px_0_hsl(var(--primary)/0.2)]",
-          "hover:brightness-110",
+          "fixed bottom-6 right-6 z-50 transition-all duration-150",
           isOpen && "scale-0 opacity-0 pointer-events-none"
         )}
-        aria-label="Open chat with Clipsie"
       >
-        {/* Gradient ring + face */}
-        <div className="h-full w-full rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-[3px]">
-          <div className="h-full w-full rounded-full overflow-hidden bg-card">
-            <img
-              src={clipsieAvatar}
-              alt="Clipsie"
-              className="h-full w-full object-cover scale-[1.17] translate-y-[7%] -translate-x-[8%]"
-            />
+        {/* 3D base/edge — visible rim that "sinks" into the surface */}
+        <div
+          className="absolute inset-0 rounded-full"
+          style={{
+            background: "linear-gradient(135deg, hsl(var(--primary)/0.6), hsl(var(--secondary)/0.8))",
+            height: "80px",
+            width: "80px",
+            top: "4px",
+            left: "4px",
+            filter: "brightness(0.45)",
+          }}
+        />
+        {/* Clickable button face */}
+        <button
+          onClick={() => setIsOpen(true)}
+          className={cn(
+            "relative h-[80px] w-[80px] rounded-full transition-all duration-100 focus:outline-none",
+            "pulse-glow",
+            // Resting: lifted up-left from the base
+            "translate-x-[-2px] translate-y-[-2px]",
+            // Pressed: slides down-right into the base
+            "active:translate-x-[2px] active:translate-y-[2px]",
+            "active:brightness-95",
+            "hover:brightness-110",
+          )}
+          aria-label="Open chat with Clipsie"
+          style={{
+            boxShadow: "3px 3px 8px hsl(var(--primary)/0.35), -1px -1px 4px hsl(var(--foreground)/0.05)",
+          }}
+        >
+          {/* Gradient ring + face */}
+          <div className="h-full w-full rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-[3px]">
+            <div className="h-full w-full rounded-full overflow-hidden bg-card">
+              <img
+                src={clipsieAvatar}
+                alt="Clipsie"
+                className="h-full w-full object-cover scale-[1.17] translate-y-[7%] -translate-x-[8%]"
+              />
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
+      </div>
 
       {/* Backdrop */}
       <div
