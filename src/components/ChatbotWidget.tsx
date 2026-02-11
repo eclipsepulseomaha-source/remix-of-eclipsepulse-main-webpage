@@ -52,10 +52,10 @@ const ChatbotWidget = () => {
 
   return (
     <>
-      {/* Floating Clipsie 3D button */}
+      {/* Floating Clipsie 3D button + label */}
       <div
         className={cn(
-          "fixed bottom-6 right-6 z-50 transition-all duration-150",
+          "fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 transition-all duration-150",
           isOpen && "scale-0 opacity-0 pointer-events-none"
         )}
       >
@@ -170,6 +170,15 @@ const ChatbotWidget = () => {
               />
             </div>
           </div>
+        </button>
+
+        {/* "Curious how I work?" label */}
+        <button
+          onClick={() => setIsOpen(true)}
+          className="px-5 py-2 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground text-sm font-semibold text-center shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+          aria-label="Open chat with Clipsie"
+        >
+          Curious how I work?
         </button>
       </div>
 
