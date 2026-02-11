@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { X, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import clipsieAvatar from "@/assets/clipsie-avatar.png";
+import clipsieChatAvatar from "@/assets/clipsie-chat-avatar.png";
 
 interface Message {
   id: number;
@@ -214,11 +215,13 @@ const ChatbotWidget = () => {
         {/* Minimal header */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-border">
           <div className="flex items-center gap-3">
-            <img
-              src={clipsieAvatar}
-              alt="Clipsie"
-              className="h-9 w-9 rounded-full object-cover ring-2 ring-primary/40"
-            />
+            <div className="h-9 w-9 rounded-full p-[2px]" style={{ background: "linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--gradient-amber)))" }}>
+              <img
+                src={clipsieChatAvatar}
+                alt="Clipsie"
+                className="h-full w-full rounded-full object-cover"
+              />
+            </div>
             <div>
               <span className="text-sm font-semibold text-foreground">Clipsie</span>
               <span className="ml-2 inline-block h-2 w-2 rounded-full bg-accent" />
@@ -244,11 +247,13 @@ const ChatbotWidget = () => {
               )}
             >
               {msg.sender === "bot" && (
-                <img
-                  src={clipsieAvatar}
-                  alt="Clipsie"
-                  className="h-7 w-7 rounded-full object-cover flex-shrink-0 mt-1"
-                />
+                <div className="h-7 w-7 rounded-full p-[1.5px] flex-shrink-0 mt-1" style={{ background: "linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--gradient-amber)))" }}>
+                  <img
+                    src={clipsieChatAvatar}
+                    alt="Clipsie"
+                    className="h-full w-full rounded-full object-cover"
+                  />
+                </div>
               )}
               <div
                 className={cn(
