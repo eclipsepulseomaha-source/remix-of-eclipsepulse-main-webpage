@@ -55,122 +55,125 @@ const ChatbotWidget = () => {
       {/* Floating Clipsie 3D button + label */}
       <div
         className={cn(
-          "fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 transition-all duration-150",
+          "fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 transition-all duration-150",
           isOpen && "scale-0 opacity-0 pointer-events-none"
         )}
       >
-        {/* 3D base — the shadow that grounds the button */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            width: "84px",
-            height: "84px",
-            top: "6px",
-            left: "6px",
-            background: "hsl(220 10% 12%)",
-            boxShadow:
-              "0 6px 20px hsl(0 0% 0% / 0.6), " +
-              "0 12px 40px hsl(0 0% 0% / 0.4), " +
-              "0 2px 6px hsl(0 0% 0% / 0.5)",
-          }}
-        />
-        {/* Clickable button face */}
-        <button
-          onClick={() => setIsOpen(true)}
-          className={cn(
-            "relative h-[84px] w-[84px] rounded-full transition-all duration-100 focus:outline-none",
-            "pulse-glow",
-            "translate-x-[-3px] translate-y-[-3px]",
-            "active:translate-x-[1px] active:translate-y-[1px]",
-          )}
-          aria-label="Open chat with Clipsie"
-        >
-          {/* Outer chrome ring — the main 3D metallic rim */}
+        {/* Button wrapper — needs relative positioning for the shadow base */}
+        <div className="relative h-[84px] w-[84px]">
+          {/* 3D base — the shadow that grounds the button */}
           <div
-            className="absolute inset-0 rounded-full"
+            className="absolute rounded-full"
             style={{
-              background:
-                "conic-gradient(from 200deg, " +
-                "hsl(210 4% 82%) 0deg, " +
-                "hsl(210 6% 92%) 30deg, " +
-                "hsl(210 5% 98%) 60deg, " +       // bright specular top-left
-                "hsl(210 4% 88%) 90deg, " +
-                "hsl(210 3% 72%) 120deg, " +
-                "hsl(210 4% 58%) 160deg, " +
-                "hsl(210 3% 45%) 200deg, " +       // dark bottom-right
-                "hsl(210 4% 40%) 240deg, " +
-                "hsl(210 3% 48%) 280deg, " +
-                "hsl(210 4% 62%) 310deg, " +
-                "hsl(210 5% 75%) 340deg, " +
-                "hsl(210 4% 82%) 360deg)",
+              width: "84px",
+              height: "84px",
+              top: "6px",
+              left: "6px",
+              background: "hsl(220 10% 12%)",
               boxShadow:
-                "inset 0 2px 4px hsl(0 0% 100% / 0.5), " +   // top highlight
-                "inset 0 -3px 6px hsl(0 0% 0% / 0.4), " +     // bottom shadow
-                "inset 2px 0 3px hsl(0 0% 100% / 0.2), " +     // left highlight
-                "inset -2px 0 4px hsl(0 0% 0% / 0.2), " +      // right shadow
-                "0 4px 12px hsl(0 0% 0% / 0.5), " +
-                "0 1px 3px hsl(0 0% 0% / 0.4)",
+                "0 6px 20px hsl(0 0% 0% / 0.6), " +
+                "0 12px 40px hsl(0 0% 0% / 0.4), " +
+                "0 2px 6px hsl(0 0% 0% / 0.5)",
             }}
+          />
+          {/* Clickable button face */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className={cn(
+              "relative h-[84px] w-[84px] rounded-full transition-all duration-100 focus:outline-none",
+              "pulse-glow",
+              "translate-x-[-3px] translate-y-[-3px]",
+              "active:translate-x-[1px] active:translate-y-[1px]",
+            )}
+            aria-label="Open chat with Clipsie"
           >
-            {/* Brushed metal texture overlay */}
+            {/* Outer chrome ring — the main 3D metallic rim */}
             <div
-              className="absolute inset-0 rounded-full opacity-30"
+              className="absolute inset-0 rounded-full"
               style={{
                 background:
-                  "repeating-linear-gradient(135deg, transparent, transparent 2px, hsl(0 0% 100% / 0.08) 2px, transparent 3px), " +
-                  "repeating-linear-gradient(125deg, transparent, transparent 4px, hsl(0 0% 100% / 0.05) 4px, transparent 5px), " +
-                  "repeating-linear-gradient(145deg, transparent, transparent 3px, hsl(0 0% 0% / 0.06) 3px, transparent 4px)",
-              }}
-            />
-            {/* Specular highlight — bright arc top-left */}
-            <div
-              className="absolute rounded-full"
-              style={{
-                top: "3px",
-                left: "6px",
-                width: "55%",
-                height: "30%",
-                background: "linear-gradient(160deg, hsl(0 0% 100% / 0.6) 0%, hsl(0 0% 100% / 0) 100%)",
-                borderRadius: "50%",
-                filter: "blur(2px)",
-              }}
-            />
-            {/* Inner bevel — creates depth between rim and face */}
-            <div
-              className="absolute rounded-full"
-              style={{
-                top: "6px",
-                left: "6px",
-                right: "6px",
-                bottom: "6px",
+                  "conic-gradient(from 200deg, " +
+                  "hsl(210 4% 82%) 0deg, " +
+                  "hsl(210 6% 92%) 30deg, " +
+                  "hsl(210 5% 98%) 60deg, " +
+                  "hsl(210 4% 88%) 90deg, " +
+                  "hsl(210 3% 72%) 120deg, " +
+                  "hsl(210 4% 58%) 160deg, " +
+                  "hsl(210 3% 45%) 200deg, " +
+                  "hsl(210 4% 40%) 240deg, " +
+                  "hsl(210 3% 48%) 280deg, " +
+                  "hsl(210 4% 62%) 310deg, " +
+                  "hsl(210 5% 75%) 340deg, " +
+                  "hsl(210 4% 82%) 360deg)",
                 boxShadow:
-                  "inset 0 2px 5px hsl(0 0% 0% / 0.5), " +
-                  "inset 0 -1px 3px hsl(0 0% 100% / 0.3), " +
-                  "0 1px 2px hsl(0 0% 100% / 0.15)",
-                background: "transparent",
+                  "inset 0 2px 4px hsl(0 0% 100% / 0.5), " +
+                  "inset 0 -3px 6px hsl(0 0% 0% / 0.4), " +
+                  "inset 2px 0 3px hsl(0 0% 100% / 0.2), " +
+                  "inset -2px 0 4px hsl(0 0% 0% / 0.2), " +
+                  "0 4px 12px hsl(0 0% 0% / 0.5), " +
+                  "0 1px 3px hsl(0 0% 0% / 0.4)",
               }}
-            />
-          </div>
-
-          {/* Inner face — gradient ring + avatar */}
-          <div
-            className="absolute rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-[2px]"
-            style={{
-              top: "7px",
-              left: "7px",
-              right: "7px",
-              bottom: "7px",
-            }}
-          >
-            <div className="h-full w-full rounded-full overflow-hidden bg-card">
-              <img
-                src={clipsieAvatar}
-                alt="Clipsie"
-                className="h-full w-full object-cover scale-[1.17] translate-y-[7%] -translate-x-[8%]"
+            >
+              {/* Brushed metal texture overlay */}
+              <div
+                className="absolute inset-0 rounded-full opacity-30"
+                style={{
+                  background:
+                    "repeating-linear-gradient(135deg, transparent, transparent 2px, hsl(0 0% 100% / 0.08) 2px, transparent 3px), " +
+                    "repeating-linear-gradient(125deg, transparent, transparent 4px, hsl(0 0% 100% / 0.05) 4px, transparent 5px), " +
+                    "repeating-linear-gradient(145deg, transparent, transparent 3px, hsl(0 0% 0% / 0.06) 3px, transparent 4px)",
+                }}
+              />
+              {/* Specular highlight — bright arc top-left */}
+              <div
+                className="absolute rounded-full"
+                style={{
+                  top: "3px",
+                  left: "6px",
+                  width: "55%",
+                  height: "30%",
+                  background: "linear-gradient(160deg, hsl(0 0% 100% / 0.6) 0%, hsl(0 0% 100% / 0) 100%)",
+                  borderRadius: "50%",
+                  filter: "blur(2px)",
+                }}
+              />
+              {/* Inner bevel — creates depth between rim and face */}
+              <div
+                className="absolute rounded-full"
+                style={{
+                  top: "6px",
+                  left: "6px",
+                  right: "6px",
+                  bottom: "6px",
+                  boxShadow:
+                    "inset 0 2px 5px hsl(0 0% 0% / 0.5), " +
+                    "inset 0 -1px 3px hsl(0 0% 100% / 0.3), " +
+                    "0 1px 2px hsl(0 0% 100% / 0.15)",
+                  background: "transparent",
+                }}
               />
             </div>
-          </div>
-        </button>
+
+            {/* Inner face — gradient ring + avatar */}
+            <div
+              className="absolute rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-[2px]"
+              style={{
+                top: "7px",
+                left: "7px",
+                right: "7px",
+                bottom: "7px",
+              }}
+            >
+              <div className="h-full w-full rounded-full overflow-hidden bg-card">
+                <img
+                  src={clipsieAvatar}
+                  alt="Clipsie"
+                  className="h-full w-full object-cover scale-[1.17] translate-y-[7%] -translate-x-[8%]"
+                />
+              </div>
+            </div>
+          </button>
+        </div>
 
         {/* "Curious how I work?" label */}
         <button
