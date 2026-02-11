@@ -22,7 +22,7 @@ const Navbar = () => {
             <img 
               src={logo} 
               alt="EclipsePulse" 
-              className="h-16 md:h-20 w-auto"
+              className="h-20 md:h-[6.25rem] w-auto"
             />
           </a>
 
