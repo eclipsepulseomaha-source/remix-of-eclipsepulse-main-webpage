@@ -28,6 +28,12 @@ const ChatbotWidget = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  useEffect(() => {
+    const handler = () => setIsOpen(true);
+    window.addEventListener("open-clipsie-chat", handler);
+    return () => window.removeEventListener("open-clipsie-chat", handler);
+  }, []);
+
   const handleSend = () => {
     if (!input.trim()) return;
     const userMsg: Message = {

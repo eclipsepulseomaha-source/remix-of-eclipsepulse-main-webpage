@@ -79,8 +79,7 @@ const Contact = () => {
                   className="w-full h-10 justify-start px-3 bg-gradient-to-r from-primary via-accent to-secondary border-0 text-primary-foreground font-bold"
                   style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 -1px 0 rgba(255,255,255,0.2)' }}
                   onClick={() => {
-                    // TODO: Navigate to chatbot page
-                    console.log("Navigate to chatbot");
+                    window.dispatchEvent(new CustomEvent("open-clipsie-chat"));
                   }}
                 >
                   Use Our Chatbot
