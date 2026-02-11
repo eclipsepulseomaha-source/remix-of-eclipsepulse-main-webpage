@@ -13,7 +13,7 @@ interface Message {
 const INITIAL_MESSAGES: Message[] = [
   {
     id: 1,
-    text: "Hello. 👋 I'm Clipsie. Where should we start?",
+    text: "Hello. I'm Clipsie. Where should we start?",
     sender: "bot",
   },
 ];
