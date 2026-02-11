@@ -54,7 +54,7 @@ const ChatbotWidget = () => {
     <>
       {/* Floating Clipsie 3D button + label */}
       <div
-        style={{ bottom: "17px", right: "21px" }}
+        style={{ bottom: "10px", right: "18px" }}
         className={cn(
           "fixed z-50 flex flex-col items-end gap-3 transition-all duration-150",
           isOpen && "scale-0 opacity-0 pointer-events-none"
