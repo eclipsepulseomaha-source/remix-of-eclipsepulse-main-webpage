@@ -65,7 +65,7 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {currentYear} EclipsePulse. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-primary text-center">
             Proudly serving Omaha, NE and surrounding communities
           </p>
         </div>
