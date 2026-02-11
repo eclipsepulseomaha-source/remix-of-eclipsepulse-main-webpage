@@ -89,8 +89,7 @@ const Hero = () => {
                 size="xl"
                 className="relative"
                 onClick={() => {
-                  // TODO: Navigate to chatbot page
-                  console.log("Navigate to chatbot");
+                  window.dispatchEvent(new CustomEvent("open-clipsie-chat"));
                 }}
               >
                 Meet Our Chatbot
