@@ -67,7 +67,7 @@ const ChatbotWidget = () => {
           <img
             src={clipsieAvatar}
             alt="Clipsie"
-            className="h-full w-full object-cover scale-[1.35] translate-y-[5%] translate-x-[10%]"
+            className="h-full w-full object-cover scale-[1.15] translate-y-[8%] translate-x-[8%]"
           />
         </div>
       </button>
