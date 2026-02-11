@@ -55,7 +55,7 @@ const ChatbotWidget = () => {
       {/* Floating Clipsie 3D button */}
       <div
         className={cn(
-          "fixed bottom-6 right-6 z-50 transition-all duration-150 flex flex-col items-center gap-2",
+          "fixed bottom-6 right-6 z-50 transition-all duration-150",
           isOpen && "scale-0 opacity-0 pointer-events-none"
         )}
       >
@@ -171,51 +171,6 @@ const ChatbotWidget = () => {
             </div>
           </div>
         </button>
-
-        {/* 3D "Curious how I work?" text box */}
-        <div
-          className="relative mt-1"
-          style={{
-            perspective: "400px",
-          }}
-        >
-          {/* Shadow base */}
-          <div
-            className="absolute inset-0 rounded-lg"
-            style={{
-              background: "hsl(220 10% 12%)",
-              top: "3px",
-              left: "3px",
-              boxShadow:
-                "0 4px 12px hsl(0 0% 0% / 0.5), 0 2px 4px hsl(0 0% 0% / 0.4)",
-              borderRadius: "8px",
-            }}
-          />
-          {/* Button face */}
-          <div
-            className="relative px-4 py-1.5 rounded-lg"
-            style={{
-              background:
-                "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--secondary)) 100%)",
-              boxShadow:
-                "inset 0 1px 2px hsl(0 0% 100% / 0.3), " +
-                "inset 0 -2px 4px hsl(0 0% 0% / 0.3), " +
-                "0 2px 8px hsl(0 0% 0% / 0.4)",
-              transform: "translate(-2px, -2px)",
-            }}
-          >
-            <span
-              className="text-xs font-bold tracking-wide"
-              style={{
-                color: "hsl(var(--primary-foreground))",
-                textShadow:
-                  "0 1px 2px hsl(0 0% 0% / 0.4), 0 0 8px hsl(0 0% 100% / 0.15)",
-              }}
-            >
-              Curious how I work?
-            </span>
-          </div>
-        </div>
       </div>
 
       {/* Backdrop */}
