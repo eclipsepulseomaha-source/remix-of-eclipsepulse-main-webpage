@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-12 md:h-14">
           {/* Logo */}
-          <a href="#" className="flex items-center overflow-hidden h-12 md:h-14 pr-8" style={{ background: 'linear-gradient(to right, hsl(0,0%,0%) 60%, transparent 100%)' }}>
+          <a href="#" className="flex items-center overflow-hidden h-12 md:h-14 pr-12" style={{ background: 'linear-gradient(to right, hsl(0,0%,0%) calc(100% - 35px), transparent 100%)' }}>
             <img 
               src={logo} 
               alt="EclipsePulse" 
