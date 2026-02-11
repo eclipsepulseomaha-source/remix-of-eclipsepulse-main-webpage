@@ -164,7 +164,7 @@ const ChatbotWidget = () => {
 
             {/* Inner face — gradient ring + avatar */}
             <div
-              className="absolute rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-[2px]"
+              className="absolute rounded-full bg-gradient-to-br from-secondary/80 to-primary/80 p-[2px]"
               style={{
                 top: "7px",
                 left: "7px",
