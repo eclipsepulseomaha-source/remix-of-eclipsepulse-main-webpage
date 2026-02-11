@@ -63,12 +63,15 @@ const ChatbotWidget = () => {
         <div
           className="absolute inset-0 rounded-full"
           style={{
-            background: "linear-gradient(135deg, hsl(220 10% 75%), hsl(220 5% 40%) 30%, hsl(220 10% 70%) 50%, hsl(220 5% 35%) 70%, hsl(220 10% 55%))",
+            background: "linear-gradient(120deg, hsl(220 10% 82%), hsl(220 5% 45%) 30%, hsl(220 10% 72%) 50%, hsl(220 5% 35%) 70%, hsl(220 10% 55%))",
             height: "80px",
             width: "80px",
             top: "4px",
             left: "4px",
-            boxShadow: "inset 1px 1px 2px hsl(0 0% 100% / 0.3), inset -1px -1px 2px hsl(0 0% 0% / 0.4)",
+            boxShadow:
+              "inset 2px 1px 3px hsl(0 0% 100% / 0.35), inset -1px -2px 3px hsl(0 0% 0% / 0.5), " +
+              "4px 7px 14px hsl(0 0% 0% / 0.45), 2px 3px 6px hsl(0 0% 0% / 0.3), " +
+              "-1px -1px 4px hsl(0 0% 100% / 0.04)",
           }}
         />
         {/* Clickable button face */}
@@ -86,7 +89,10 @@ const ChatbotWidget = () => {
           )}
           aria-label="Open chat with Clipsie"
           style={{
-            boxShadow: "3px 3px 8px hsl(var(--primary)/0.35), -1px -1px 4px hsl(var(--foreground)/0.05)",
+            boxShadow:
+              "3px 5px 10px hsl(0 0% 0% / 0.4), 1px 2px 4px hsl(0 0% 0% / 0.25), " +
+              "-1px -1px 3px hsl(0 0% 100% / 0.06), " +
+              "inset -2px -3px 6px hsl(0 0% 0% / 0.15), inset 1px 1px 3px hsl(0 0% 100% / 0.1)",
           }}
         >
           {/* Gradient ring + face */}
