@@ -247,13 +247,11 @@ const ChatbotWidget = () => {
               )}
             >
               {msg.sender === "bot" && (
-                <div className="h-7 w-7 rounded-full p-[1.5px] flex-shrink-0 mt-1" style={{ background: "linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--gradient-amber)))" }}>
-                  <img
-                    src={clipsieChatAvatar}
-                    alt="Clipsie"
-                    className="h-full w-full rounded-full object-cover"
-                  />
-                </div>
+                <img
+                  src={clipsieChatAvatar}
+                  alt="Clipsie"
+                  className="h-7 w-7 rounded-full object-cover flex-shrink-0 mt-1"
+                />
               )}
               <div
                 className={cn(
