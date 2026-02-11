@@ -56,17 +56,20 @@ const ChatbotWidget = () => {
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          "fixed bottom-6 right-6 z-50 h-16 w-16 rounded-full shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background overflow-hidden",
-          "pulse-glow",
+          "fixed bottom-6 right-6 z-50 h-[72px] w-[72px] rounded-full transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background overflow-hidden",
+          "bg-gradient-to-br from-primary/80 to-secondary/80 p-[3px]",
+          "pulse-glow shadow-xl shadow-primary/20",
           isOpen && "scale-0 opacity-0 pointer-events-none"
         )}
         aria-label="Open chat with Clipsie"
       >
-        <img
-          src={clipsieAvatar}
-          alt="Clipsie"
-          className="h-full w-full object-cover"
-        />
+        <div className="h-full w-full rounded-full overflow-hidden bg-card">
+          <img
+            src={clipsieAvatar}
+            alt="Clipsie"
+            className="h-full w-full object-cover scale-[1.35] translate-y-[5%] translate-x-[10%]"
+          />
+        </div>
       </button>
 
       {/* Backdrop */}
