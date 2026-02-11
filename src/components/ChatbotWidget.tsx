@@ -64,6 +64,13 @@ const ChatbotWidget = () => {
           className="absolute inset-0 rounded-full"
           style={{
             background:
+              "repeating-linear-gradient(17deg, transparent 0%, transparent 48%, hsl(210 5% 82% / 0.12) 49%, transparent 50%, transparent 100%), " +
+              "repeating-linear-gradient(163deg, transparent 0%, transparent 46%, hsl(210 4% 60% / 0.09) 47%, transparent 48%, transparent 100%), " +
+              "repeating-linear-gradient(73deg, transparent 0%, transparent 44%, hsl(210 6% 75% / 0.11) 45%, transparent 46%, transparent 100%), " +
+              "repeating-linear-gradient(112deg, transparent 0%, transparent 52%, hsl(210 5% 68% / 0.08) 53%, transparent 54%, transparent 100%), " +
+              "repeating-linear-gradient(145deg, transparent 0%, transparent 40%, hsl(210 4% 80% / 0.1) 41%, transparent 42%, transparent 100%), " +
+              "repeating-linear-gradient(28deg, transparent 0%, transparent 56%, hsl(210 3% 58% / 0.07) 57%, transparent 58%, transparent 100%), " +
+              "repeating-linear-gradient(95deg, transparent 0%, transparent 38%, hsl(210 5% 72% / 0.09) 39%, transparent 40%, transparent 100%), " +
               "repeating-linear-gradient(45deg, transparent, hsl(210 6% 80% / 0.18) 1px, transparent 2px), " +
               "repeating-linear-gradient(50deg, transparent, hsl(210 5% 70% / 0.14) 1px, hsl(210 4% 55% / 0.08) 2px, transparent 3px), " +
               "repeating-linear-gradient(40deg, transparent, hsl(210 4% 75% / 0.1) 1px, transparent 4px), " +
