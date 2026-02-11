@@ -69,10 +69,22 @@ const ChatbotWidget = () => {
       >
         {/* Button wrapper — needs relative positioning for the shadow base */}
         <div className="relative h-[84px] w-[84px]">
+          {/* Glow behind everything */}
+          <div
+            className="absolute rounded-full pulse-glow"
+            style={{
+              width: "84px",
+              height: "84px",
+              top: "0px",
+              left: "0px",
+              zIndex: 0,
+            }}
+          />
           {/* 3D base — the shadow that grounds the button */}
           <div
             className="absolute rounded-full"
             style={{
+              zIndex: 1,
               width: "84px",
               height: "84px",
               top: "6px",
@@ -86,10 +98,10 @@ const ChatbotWidget = () => {
           />
           {/* Clickable button face */}
           <button
+            style={{ zIndex: 2 }}
             onClick={() => setIsOpen(true)}
             className={cn(
               "relative h-[84px] w-[84px] rounded-full transition-all duration-100 focus:outline-none",
-              "pulse-glow",
               "translate-x-[-3px] translate-y-[-3px]",
               "active:translate-x-[1px] active:translate-y-[1px]",
             )}
