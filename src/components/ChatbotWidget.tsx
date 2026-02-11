@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { X, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
-import clipsieButton from "@/assets/clipsie-button.png";
-import clipsieChat from "@/assets/clipsie-chat.png";
+import clipsieAvatar from "@/assets/clipsie-avatar.png";
 
 interface Message {
   id: number;
@@ -164,14 +163,14 @@ const ChatbotWidget = () => {
                 left: "7px",
                 right: "7px",
                 bottom: "7px",
-                background: "linear-gradient(135deg, hsl(var(--primary) / 0.8), hsl(var(--secondary) / 0.8))",
+                background: "linear-gradient(135deg, hsl(var(--gradient-orange) / 0.8), hsl(var(--gradient-amber) / 0.8))",
               }}
             >
               <div className="h-full w-full rounded-full overflow-hidden bg-card">
                 <img
-                  src={clipsieButton}
+                  src={clipsieAvatar}
                   alt="Clipsie"
-                  className="h-full w-full object-cover scale-[1.17] translate-y-[7%] -translate-x-[8%]"
+                  className="h-full w-full object-cover"
                 />
               </div>
             </div>
@@ -217,7 +216,7 @@ const ChatbotWidget = () => {
         <div className="flex items-center justify-between px-4 py-3 border-b border-border">
           <div className="flex items-center gap-3">
             <img
-              src={clipsieChat}
+              src={clipsieAvatar}
               alt="Clipsie"
               className="h-9 w-9 rounded-full object-cover ring-2 ring-primary/40"
             />
@@ -247,7 +246,7 @@ const ChatbotWidget = () => {
             >
               {msg.sender === "bot" && (
                 <img
-                  src={clipsieChat}
+                  src={clipsieAvatar}
                   alt="Clipsie"
                   className="h-7 w-7 rounded-full object-cover flex-shrink-0 mt-1"
                 />
