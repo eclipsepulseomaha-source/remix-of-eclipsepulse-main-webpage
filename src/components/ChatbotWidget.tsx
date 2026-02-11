@@ -237,7 +237,15 @@ const ChatbotWidget = () => {
         </div>
 
         {/* Messages area */}
-        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
+        <div
+          className="flex-1 overflow-y-auto px-4 py-4 space-y-4"
+          style={{
+            background: "linear-gradient(22deg, hsl(220 20% 7%) 40%, hsl(217 91% 60% / 0.25) 100%)",
+            forcedColorAdjust: "none",
+            // @ts-ignore
+            msHighContrastAdjust: "none",
+          }}
+        >
           {messages.map((msg) => (
             <div
               key={msg.id}
