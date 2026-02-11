@@ -63,13 +63,18 @@ const ChatbotWidget = () => {
         <div
           className="absolute inset-0 rounded-full"
           style={{
-            background: "linear-gradient(150deg, hsl(210 8% 72%), hsl(210 4% 38%) 25%, hsl(210 6% 52%) 45%, hsl(210 4% 30%) 65%, hsl(210 6% 42%) 80%, hsl(210 4% 28%))",
+            background:
+              "repeating-linear-gradient(185deg, transparent, hsl(210 3% 40% / 0.08) 1px, transparent 2px), " +
+              "repeating-linear-gradient(175deg, transparent, hsl(210 4% 50% / 0.06) 1px, transparent 3px), " +
+              "linear-gradient(150deg, hsl(210 4% 28%) 0%, hsl(210 3% 24%) 15%, hsl(210 4% 30%) 30%, hsl(210 3% 22%) 50%, hsl(210 5% 26%) 65%, hsl(210 3% 20%) 80%, hsl(210 4% 18%) 100%)",
             height: "80px",
             width: "80px",
             top: "4px",
             left: "4px",
             boxShadow:
-              "inset 3px 2px 4px hsl(0 0% 100% / 0.25), inset -2px -3px 5px hsl(0 0% 0% / 0.7), " +
+              "inset 4px 3px 6px hsl(0 0% 0% / 0.6), " +
+              "inset 2px 1px 3px hsl(0 0% 0% / 0.4), " +
+              "inset -1px -1px 2px hsl(0 0% 100% / 0.04), " +
               "5px 8px 18px hsl(0 0% 0% / 0.6), 2px 4px 8px hsl(0 0% 0% / 0.4), " +
               "8px 12px 24px hsl(0 0% 0% / 0.3)",
           }}
