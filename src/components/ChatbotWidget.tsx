@@ -157,20 +157,19 @@ const ChatbotWidget = () => {
 
             {/* Inner face — gradient ring + avatar */}
             <div
-              className="absolute rounded-full p-[2px]"
+              className="absolute rounded-full bg-gradient-to-br from-primary/80 to-secondary/80 p-[2px]"
               style={{
                 top: "7px",
                 left: "7px",
                 right: "7px",
                 bottom: "7px",
-                background: "linear-gradient(135deg, hsl(var(--gradient-orange) / 0.8), hsl(var(--gradient-amber) / 0.8))",
               }}
             >
               <div className="h-full w-full rounded-full overflow-hidden bg-card">
                 <img
                   src={clipsieAvatar}
                   alt="Clipsie"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover scale-[1.17] translate-y-[7%] -translate-x-[8%]"
                 />
               </div>
             </div>
