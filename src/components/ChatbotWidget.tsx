@@ -13,7 +13,7 @@ interface Message {
 const INITIAL_MESSAGES: Message[] = [
   {
     id: 1,
-    text: "Hey there! 👋 I'm Clipsie, your EclipsePulse assistant. How can I help you today?",
+    text: "Hello. 👋 I'm Clipsie. Where should we start?",
     sender: "bot",
   },
 ];
