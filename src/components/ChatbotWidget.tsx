@@ -294,7 +294,16 @@ const ChatbotWidget = () => {
             <button
               type="submit"
               disabled={!input.trim()}
-              className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed"
+              className="flex h-10 w-10 items-center justify-center rounded-xl text-primary-foreground transition-all disabled:opacity-40 disabled:cursor-not-allowed active:translate-y-[1px]"
+              style={{
+                background: "linear-gradient(180deg, hsl(217 91% 65%) 0%, hsl(217 91% 50%) 100%)",
+                boxShadow:
+                  "inset 0 2px 3px hsl(0 0% 100% / 0.35), " +
+                  "inset 0 -2px 4px hsl(0 0% 0% / 0.3), " +
+                  "0 3px 8px hsl(0 0% 0% / 0.4), " +
+                  "0 1px 2px hsl(0 0% 0% / 0.3)",
+                textShadow: "0 1px 2px rgba(0,0,0,0.3)",
+              }}
               aria-label="Send message"
             >
               <Send className="h-4 w-4" />
