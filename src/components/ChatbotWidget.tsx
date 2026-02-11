@@ -179,7 +179,16 @@ const ChatbotWidget = () => {
         {/* "Curious how I work?" label */}
         <button
           onClick={() => setIsOpen(true)}
-          className="px-5 py-2 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground text-sm font-semibold text-center shadow-lg hover:opacity-90 transition-opacity cursor-pointer"
+          className="px-5 py-2 rounded-xl text-primary-foreground text-sm font-bold text-center hover:opacity-90 transition-opacity cursor-pointer"
+          style={{
+            background: "linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%)",
+            boxShadow:
+              "inset 0 2px 3px hsl(0 0% 100% / 0.35), " +
+              "inset 0 -2px 4px hsl(0 0% 0% / 0.3), " +
+              "0 3px 8px hsl(0 0% 0% / 0.4), " +
+              "0 1px 2px hsl(0 0% 0% / 0.3)",
+            textShadow: "0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)",
+          }}
           aria-label="Open chat with Clipsie"
         >
           Curious how I work?
