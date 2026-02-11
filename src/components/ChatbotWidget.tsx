@@ -63,12 +63,12 @@ const ChatbotWidget = () => {
         <div
           className="absolute inset-0 rounded-full"
           style={{
-            background: "linear-gradient(135deg, hsl(var(--primary)/0.6), hsl(var(--secondary)/0.8))",
+            background: "linear-gradient(135deg, hsl(220 10% 75%), hsl(220 5% 40%) 30%, hsl(220 10% 70%) 50%, hsl(220 5% 35%) 70%, hsl(220 10% 55%))",
             height: "80px",
             width: "80px",
             top: "4px",
             left: "4px",
-            filter: "brightness(0.45)",
+            boxShadow: "inset 1px 1px 2px hsl(0 0% 100% / 0.3), inset -1px -1px 2px hsl(0 0% 0% / 0.4)",
           }}
         />
         {/* Clickable button face */}
