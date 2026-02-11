@@ -64,20 +64,20 @@ const ChatbotWidget = () => {
           className="absolute inset-0 rounded-full"
           style={{
             background:
-              "repeating-linear-gradient(135deg, transparent, hsl(210 6% 80% / 0.18) 1px, transparent 2px), " +
-              "repeating-linear-gradient(140deg, transparent, hsl(210 5% 70% / 0.14) 1px, hsl(210 4% 55% / 0.08) 2px, transparent 3px), " +
-              "repeating-linear-gradient(130deg, transparent, hsl(210 4% 75% / 0.1) 1px, transparent 4px), " +
+              "repeating-linear-gradient(45deg, transparent, hsl(210 6% 80% / 0.18) 1px, transparent 2px), " +
+              "repeating-linear-gradient(50deg, transparent, hsl(210 5% 70% / 0.14) 1px, hsl(210 4% 55% / 0.08) 2px, transparent 3px), " +
+              "repeating-linear-gradient(40deg, transparent, hsl(210 4% 75% / 0.1) 1px, transparent 4px), " +
               "linear-gradient(150deg, hsl(210 6% 78%) 0%, hsl(210 5% 68%) 10%, hsl(210 4% 58%) 20%, hsl(210 6% 72%) 30%, hsl(210 5% 62%) 40%, hsl(210 4% 55%) 50%, hsl(210 6% 65%) 55%, hsl(210 5% 50%) 65%, hsl(210 4% 45%) 75%, hsl(210 5% 40%) 85%, hsl(210 4% 35%) 100%)",
             height: "80px",
             width: "80px",
             top: "4px",
             left: "4px",
             boxShadow:
-              "inset 6px 5px 10px hsl(0 0% 0% / 0.7), " +
-              "inset 3px 2px 5px hsl(0 0% 0% / 0.5), " +
+              "inset 18px 15px 30px hsl(0 0% 0% / 0.85), " +
+              "inset 9px 6px 15px hsl(0 0% 0% / 0.7), " +
               "inset -1px -1px 2px hsl(0 0% 100% / 0.03), " +
-              "6px 10px 22px hsl(0 0% 0% / 0.7), 3px 5px 10px hsl(0 0% 0% / 0.5), " +
-              "10px 16px 32px hsl(0 0% 0% / 0.4), 1px 2px 4px hsl(0 0% 0% / 0.6)",
+              "18px 30px 66px hsl(0 0% 0% / 0.85), 9px 15px 30px hsl(0 0% 0% / 0.7), " +
+              "30px 48px 96px hsl(0 0% 0% / 0.6), 3px 6px 12px hsl(0 0% 0% / 0.8)",
           }}
         />
         {/* Clickable button face */}
