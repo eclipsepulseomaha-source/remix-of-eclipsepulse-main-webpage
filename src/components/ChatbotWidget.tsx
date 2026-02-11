@@ -73,11 +73,11 @@ const ChatbotWidget = () => {
             top: "4px",
             left: "4px",
             boxShadow:
-              "inset -6px -5px 10px hsl(0 0% 0% / 0.28), " +
-              "inset -3px -2px 5px hsl(0 0% 0% / 0.23), " +
+              "inset -12px -10px 20px hsl(0 0% 0% / 0.56), " +
+              "inset -6px -4px 10px hsl(0 0% 0% / 0.46), " +
               "inset 3px 2px 4px hsl(0 0% 100% / 0.06), " +
-              "3px 4px 8px hsl(0 0% 0% / 0.17), 1px 2px 4px hsl(0 0% 0% / 0.13), " +
-              "6px 10px 22px hsl(0 0% 0% / 0.28), 10px 16px 32px hsl(0 0% 0% / 0.2)",
+              "6px 8px 16px hsl(0 0% 0% / 0.34), 2px 4px 8px hsl(0 0% 0% / 0.26), " +
+              "12px 20px 44px hsl(0 0% 0% / 0.56), 20px 32px 64px hsl(0 0% 0% / 0.4)",
           }}
         />
         {/* Clickable button face */}
