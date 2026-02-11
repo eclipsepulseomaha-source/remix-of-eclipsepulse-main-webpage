@@ -11,12 +11,12 @@ const Hero = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
       
       {/* Full-width logo background - seamlessly merged */}
-      <div className="absolute inset-x-0 top-0 flex items-start justify-center">
+      <div className="absolute inset-x-0 top-0 flex items-start justify-center overflow-hidden max-h-[60vh] md:max-h-none">
         <img 
           src={logo} 
           alt="" 
           aria-hidden="true"
-          className="w-full h-auto max-h-screen object-contain brightness-110 contrast-105"
+          className="w-full h-auto max-h-screen object-contain object-top brightness-110 contrast-105"
           style={{
             filter: 'brightness(1.1) contrast(1.05) drop-shadow(0 0 60px rgba(255, 200, 100, 0.4))',
           }}
