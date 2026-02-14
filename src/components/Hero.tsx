@@ -63,7 +63,7 @@ const Hero = () => {
             Smart AI Chatbots for
             <br />
             <span className="gradient-text" style={{ WebkitTextStroke: 'inherit' }}>
-              <span className="md:hidden" style={{ textShadow: '0 0 3px rgba(0,0,0,0.6), 0 0 6px rgba(0,0,0,0.3)' }}>Your Business</span>
+              <span className="md:hidden" style={{ WebkitTextStroke: '1px black' }}>Your Business</span>
               <span className="hidden md:inline">Your Business</span>
             </span>
           </h1>
