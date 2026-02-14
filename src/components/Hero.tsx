@@ -41,9 +41,16 @@ const Hero = () => {
       
       {/* Bottom edge fade overlay - aggressive blend starting from middle */}
       <div 
-        className="absolute bottom-0 left-0 right-0 h-full pointer-events-none z-[2]"
+        className="absolute bottom-0 left-0 right-0 h-full pointer-events-none z-[2] hidden md:block"
         style={{
           background: 'linear-gradient(to top, hsl(220 15% 12%) 0%, hsl(220 18% 8%) 20%, hsl(220 20% 6%) 35%, hsl(220 20% 5%) 45%, transparent 70%)',
+        }}
+      />
+      {/* Mobile-only bottom fade - raised higher */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-full pointer-events-none z-[2] block md:hidden"
+        style={{
+          background: 'linear-gradient(to top, hsl(220 15% 12%) 0%, hsl(220 18% 8%) 25%, hsl(220 20% 6%) 45%, hsl(220 20% 5%) 58%, transparent 80%)',
         }}
       />
       
