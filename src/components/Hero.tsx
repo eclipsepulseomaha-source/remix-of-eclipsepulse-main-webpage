@@ -56,7 +56,7 @@ const Hero = () => {
           </div>
 
           {/* Spacer to push content below logo text area */}
-          <div className="h-32 md:h-44 lg:h-48" />
+          <div className="h-32 md:h-[11.5rem] lg:h-[12.75rem]" />
 
           {/* Main Headline */}
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-[0_8px_40px_rgba(59,130,246,0.7)]">
