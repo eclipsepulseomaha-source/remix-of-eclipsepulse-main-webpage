@@ -28,7 +28,7 @@ const contactInfo = [
   {
     icon: Clock,
     label: "Hours",
-    value: "Clipsie works around the clock, 24/7. Curtis handles the human hours.",
+    value: "Our chatbot Clipsie works around the clock, 24/7. Curtis handles the human hours.",
     href: null,
   },
 ];
