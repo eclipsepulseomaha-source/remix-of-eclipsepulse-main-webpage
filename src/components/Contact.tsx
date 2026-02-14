@@ -139,7 +139,10 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-foreground">
+            <h3 
+              className="text-xl font-semibold text-primary"
+              style={{ textShadow: '0 0 20px hsl(var(--secondary) / 0.6), 0 0 40px hsl(var(--secondary) / 0.3)' }}
+            >
               Get In Touch
             </h3>
             <p className="text-muted-foreground">
