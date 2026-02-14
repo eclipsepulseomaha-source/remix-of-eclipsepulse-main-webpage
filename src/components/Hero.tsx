@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
       
       {/* Full-width logo background - seamlessly merged */}
-      <div className="absolute inset-x-0 top-0 flex items-start justify-center max-h-[60vh] md:max-h-none overflow-hidden">
+      <div className="absolute inset-x-0 top-0 flex items-start justify-center">
         <img 
           src={logo} 
           alt="" 
