@@ -28,7 +28,7 @@ const contactInfo = [
   {
     icon: Clock,
     label: "Hours",
-    value: "Mon-Fri: 9am-5pm CT",
+    value: "Clipsie works around the clock, 24/7. Curtis handles the human hours.",
     href: null,
   },
 ];
