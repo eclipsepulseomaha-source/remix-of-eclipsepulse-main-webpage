@@ -138,7 +138,7 @@ const Contact = () => {
           </Card>
 
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-2">
             <h3 
               className="text-xl font-semibold text-primary"
               style={{ textShadow: '0 0 20px hsl(var(--secondary) / 0.6), 0 0 40px hsl(var(--secondary) / 0.3)' }}
