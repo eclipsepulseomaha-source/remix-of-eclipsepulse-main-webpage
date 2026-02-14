@@ -62,7 +62,10 @@ const Hero = () => {
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-[0_8px_40px_rgba(59,130,246,0.7)]">
             Smart AI Chatbots for
             <br />
-            <span className="gradient-text">Your Business</span>
+            <span className="gradient-text" style={{ WebkitTextStroke: 'inherit' }}>
+              <span className="md:hidden" style={{ WebkitTextStroke: '1px black' }}>Your Business</span>
+              <span className="hidden md:inline">Your Business</span>
+            </span>
           </h1>
 
           {/* Subheadline */}
