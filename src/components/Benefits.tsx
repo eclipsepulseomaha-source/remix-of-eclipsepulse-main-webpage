@@ -45,12 +45,12 @@ const BenefitItem = ({ title, description }: BenefitItemProps) => {
         <Check className="w-4 h-4 text-primary-foreground" />
       </div>
       <div className="flex-1">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between md:justify-start gap-2">
           <h3 className="text-xl font-semibold text-foreground">
             {title}
           </h3>
           <ChevronDown 
-            className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+            className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${
               isHovered ? 'rotate-180' : ''
             }`} 
           />
