@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { X, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 import clipsieAvatar from "@/assets/clipsie-avatar.png";
 import clipsieChatAvatar from "@/assets/clipsie-chat-avatar.png";
 
@@ -34,7 +35,7 @@ const ChatbotWidget = () => {
     return () => window.removeEventListener("open-clipsie-chat", handler);
   }, []);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
     const userMsg: Message = {
       id: Date.now(),
@@ -44,17 +45,36 @@ const ChatbotWidget = () => {
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
 
-    // Mock bot reply after a short delay
-    setTimeout(() => {
+    // Build conversation history for context
+    const history = messages.map((m) => ({
+      role: m.sender === "bot" ? "assistant" : "user",
+      content: m.text,
+    }));
+
+    try {
+      const { data, error } = await supabase.functions.invoke("chat-webhook", {
+        body: { message: userMsg.text, history },
+      });
+
+      const reply =
+        error || !data?.reply
+          ? "Sorry, I couldn't reach my brain right now. Please try again later."
+          : data.reply;
+
+      setMessages((prev) => [
+        ...prev,
+        { id: Date.now() + 1, text: reply, sender: "bot" },
+      ]);
+    } catch {
       setMessages((prev) => [
         ...prev,
         {
           id: Date.now() + 1,
-          text: "Thanks for your message! I'm just a visual prototype for now — my brain is being wired up in n8n. Stay tuned! 🚀",
+          text: "Something went wrong. Please try again later.",
           sender: "bot",
         },
       ]);
-    }, 1000);
+    }
   };
 
   return (
