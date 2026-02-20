@@ -39,13 +39,18 @@ serve(async (req) => {
     // Try to parse as JSON first, fall back to plain text
     const contentType = response.headers.get('content-type') || '';
     let reply: string;
+    const rawText = await response.text();
 
-    if (contentType.includes('application/json')) {
-      const data = await response.json();
-      // Support common response shapes: { reply }, { text }, { message }, { output }, or raw string
-      reply = data.reply || data.text || data.message || data.output || JSON.stringify(data);
+    if (contentType.includes('application/json') && rawText.trim()) {
+      try {
+        const data = JSON.parse(rawText);
+        // Support common response shapes: { reply }, { text }, { message }, { output }, or raw string
+        reply = data.reply || data.text || data.message || data.output || JSON.stringify(data);
+      } catch {
+        reply = rawText || 'Received an empty response.';
+      }
     } else {
-      reply = await response.text();
+      reply = rawText || 'Received an empty response.';
     }
 
     return new Response(
