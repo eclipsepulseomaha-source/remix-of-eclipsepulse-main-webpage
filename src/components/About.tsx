@@ -9,22 +9,23 @@ const About = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
+          {/* Section title - centered on full page */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center">
+            <span 
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage: 'linear-gradient(to bottom right, hsl(var(--secondary)) 0%, hsl(var(--secondary)) 25%, hsl(var(--primary)) 100%)'
+              }}
+            >Founders</span>
+          </h2>
+          <p className="text-center mb-8">
+            <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
+          </p>
+
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Content - upper portion */}
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:text-center" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: '100vw', maxWidth: '100vw', pointerEvents: 'none' }}>
-                <span 
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: 'linear-gradient(to bottom right, hsl(var(--secondary)) 0%, hsl(var(--secondary)) 25%, hsl(var(--primary)) 100%)'
-                  }}
-                >Founders</span>
-              </h2>
-              
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p className="md:text-center" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: '100vw', maxWidth: '100vw', pointerEvents: 'none' }}>
-                  <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
-                </p>
                 <p>
                   We grew up in Omaha, and after years of working with businesses on the East and West Coasts, we've come back home to bring that experience to the work we do here. We are grateful to be part of this city again and to serve the businesses that make it thrive.
                 </p>
