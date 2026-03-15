@@ -36,7 +36,7 @@ const About = () => {
             </div>
 
             {/* Founder Photo */}
-            <div className="relative max-w-[calc(100%-30px)] mx-auto md:mx-0 md:mt-[110px]">
+            <div className="relative max-w-[calc(100%-30px)] mx-auto md:mx-0">
               <div 
                 className="relative rounded-2xl overflow-hidden"
                 style={{
