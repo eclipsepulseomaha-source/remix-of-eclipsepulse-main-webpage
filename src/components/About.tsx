@@ -61,7 +61,7 @@ const About = () => {
           </div>
 
           {/* Continued text - full width */}
-          <div className="text-muted-foreground leading-relaxed space-y-4 mt-4">
+          <div className="relative z-10 text-muted-foreground leading-relaxed space-y-4 mt-4">
             <p>
               Back then, connectivity gave local businesses new power in a rapidly changing world. Today, we see AI as another practical tool to help local businesses compete.
             </p>
