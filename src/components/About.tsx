@@ -11,7 +11,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Content - upper portion */}
-            <div>
+            <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center">
                 <span 
                   className="bg-clip-text text-transparent"
@@ -35,7 +35,7 @@ const About = () => {
             </div>
 
             {/* Founder Photo */}
-            <div className="relative max-w-[calc(100%-30px)] mx-auto md:mx-0 md:-mt-[342px]">
+            <div className="relative max-w-[calc(100%-30px)] mx-auto md:mx-0">
               <div 
                 className="relative rounded-2xl overflow-hidden"
                 style={{
