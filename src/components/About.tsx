@@ -12,7 +12,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Content - upper portion */}
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:text-center" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: '100vw', maxWidth: '100vw', pointerEvents: 'none' }}>
                 <span 
                   className="bg-clip-text text-transparent"
                   style={{
@@ -22,7 +22,7 @@ const About = () => {
               </h2>
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p className="text-center">
+                <p className="md:text-center" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: '100vw', maxWidth: '100vw', pointerEvents: 'none' }}>
                   <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
                 </p>
                 <p>
