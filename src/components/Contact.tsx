@@ -91,6 +91,8 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="bg-muted/50 border-border"
                     required
+                    autoComplete="name"
+                    name="name"
                   />
                 </div>
                 <div>
@@ -100,6 +102,8 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="bg-muted/50 border-border"
+                    autoComplete="tel"
+                    name="phone"
                   />
                 </div>
                 <div>
@@ -110,6 +114,8 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-muted/50 border-border"
                     required
+                    autoComplete="email"
+                    name="email"
                   />
                 </div>
                 <div>
@@ -118,6 +124,8 @@ const Contact = () => {
                     value={formData.business}
                     onChange={(e) => setFormData({ ...formData, business: e.target.value })}
                     className="bg-muted/50 border-border"
+                    autoComplete="organization"
+                    name="organization"
                   />
                 </div>
                 <div>
