@@ -114,6 +114,8 @@ const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-muted/50 border-border"
                     required
+                    autoComplete="email"
+                    name="email"
                   />
                 </div>
                 <div>
