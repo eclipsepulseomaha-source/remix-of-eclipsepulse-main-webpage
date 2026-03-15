@@ -22,7 +22,7 @@ const About = () => {
               </h2>
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p className="text-center">
+                <p className="md:text-center" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: '100vw', maxWidth: '100vw', pointerEvents: 'none' }}>
                   <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
                 </p>
                 <p>
