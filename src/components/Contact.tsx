@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@eclipsepulse.com",
-    href: "mailto:hello@eclipsepulse.com",
+    value: "hello@eclipsepulseomaha.com",
+    href: "mailto:hello@eclipsepulseomaha.com",
   },
   {
     icon: MapPin,
