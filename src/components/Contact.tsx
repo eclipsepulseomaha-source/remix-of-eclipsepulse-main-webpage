@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import Fireflies from "@/components/Fireflies";
 
 const contactInfo = [
@@ -41,12 +43,32 @@ const Contact = () => {
     business: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    alert("Thanks for reaching out! We'll be in touch soon.");
+    setIsSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+      if (error) throw error;
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out! We'll be in touch soon.",
+      });
+      setFormData({ name: "", phone: "", email: "", business: "", message: "" });
+    } catch (err) {
+      console.error("Error sending message:", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -137,9 +159,18 @@ const Contact = () => {
                     required
                   />
                 </div>
-                <Button type="submit" variant="gradient" size="lg" className="w-full group">
-                  Send Message
-                  <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Button type="submit" variant="gradient" size="lg" className="w-full group" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 w-4 h-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
