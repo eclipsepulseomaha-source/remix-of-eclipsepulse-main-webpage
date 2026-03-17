@@ -43,12 +43,32 @@ const Contact = () => {
     business: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    alert("Thanks for reaching out! We'll be in touch soon.");
+    setIsSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+      if (error) throw error;
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out! We'll be in touch soon.",
+      });
+      setFormData({ name: "", phone: "", email: "", business: "", message: "" });
+    } catch (err) {
+      console.error("Error sending message:", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
