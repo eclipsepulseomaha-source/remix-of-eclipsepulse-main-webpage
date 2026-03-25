@@ -42,7 +42,7 @@ ${message}
       },
       body: JSON.stringify({
         from: "EclipsePulse Website <onboarding@resend.dev>",
-        to: ["hello@eclipsepulseomaha.com"],
+        to: ["eclipsepulseomaha@gmail.com"],
         subject: "Website Message",
         text: emailBody,
         reply_to: email,
