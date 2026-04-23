@@ -29,7 +29,7 @@ serve(async (req) => {
     const response = await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message, history: history || [] }),
+      body: JSON.stringify({ message, history: history || [], sessionId }),
     });
 
     if (!response.ok) {
