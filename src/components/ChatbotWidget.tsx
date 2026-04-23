@@ -54,7 +54,7 @@ const ChatbotWidget = () => {
 
     try {
       const { data, error } = await supabase.functions.invoke("chat-webhook", {
-        body: { message: userMsg.text, history },
+        body: { message: userMsg.text, history, sessionId },
       });
 
       const reply =
