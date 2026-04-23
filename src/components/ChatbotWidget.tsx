@@ -23,6 +23,7 @@ const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
   const [input, setInput] = useState("");
+  const [sessionId] = useState(() => crypto.randomUUID());
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -57,14 +58,9 @@ const ChatbotWidget = () => {
       });
 
       const reply =
-        error || !data?.reply
-          ? "Sorry, I couldn't reach my brain right now. Please try again later."
-          : data.reply;
+        error || !data?.reply ? "Sorry, I couldn't reach my brain right now. Please try again later." : data.reply;
 
-      setMessages((prev) => [
-        ...prev,
-        { id: Date.now() + 1, text: reply, sender: "bot" },
-      ]);
+      setMessages((prev) => [...prev, { id: Date.now() + 1, text: reply, sender: "bot" }]);
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -84,7 +80,7 @@ const ChatbotWidget = () => {
         style={{ bottom: "10px", right: "18px" }}
         className={cn(
           "fixed z-50 flex flex-col items-end gap-3 transition-all duration-150",
-          isOpen && "scale-0 opacity-0 pointer-events-none"
+          isOpen && "scale-0 opacity-0 pointer-events-none",
         )}
       >
         {/* Button wrapper — needs relative positioning for the shadow base */}
@@ -111,9 +107,7 @@ const ChatbotWidget = () => {
               left: "6px",
               background: "hsl(220 10% 12%)",
               boxShadow:
-                "0 6px 20px hsl(0 0% 0% / 0.6), " +
-                "0 12px 40px hsl(0 0% 0% / 0.4), " +
-                "0 2px 6px hsl(0 0% 0% / 0.5)",
+                "0 6px 20px hsl(0 0% 0% / 0.6), " + "0 12px 40px hsl(0 0% 0% / 0.4), " + "0 2px 6px hsl(0 0% 0% / 0.5)",
             }}
           />
           {/* Clickable button face */}
@@ -238,7 +232,7 @@ const ChatbotWidget = () => {
       <div
         className={cn(
           "fixed inset-0 z-50 bg-background/60 backdrop-blur-sm transition-opacity duration-300",
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
         onClick={() => setIsOpen(false)}
       />
@@ -247,18 +241,17 @@ const ChatbotWidget = () => {
       <div
         className={cn(
           "fixed top-0 right-0 z-50 h-full w-full sm:w-[400px] flex flex-col bg-card border-l border-border shadow-2xl transition-transform duration-300 ease-in-out",
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
         {/* Minimal header */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-border">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-full p-[2px]" style={{ background: "linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--gradient-amber)))" }}>
-              <img
-                src={clipsieChatAvatar}
-                alt="Clipsie"
-                className="h-full w-full rounded-full object-cover"
-              />
+            <div
+              className="h-9 w-9 rounded-full p-[2px]"
+              style={{ background: "linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--gradient-amber)))" }}
+            >
+              <img src={clipsieChatAvatar} alt="Clipsie" className="h-full w-full rounded-full object-cover" />
             </div>
             <div>
               <span className="text-sm font-semibold text-foreground">Clipsie</span>
@@ -285,13 +278,7 @@ const ChatbotWidget = () => {
           }}
         >
           {messages.map((msg) => (
-            <div
-              key={msg.id}
-              className={cn(
-                "flex gap-2.5",
-                msg.sender === "user" ? "flex-row-reverse" : "flex-row"
-              )}
-            >
+            <div key={msg.id} className={cn("flex gap-2.5", msg.sender === "user" ? "flex-row-reverse" : "flex-row")}>
               {msg.sender === "bot" && (
                 <img
                   src={clipsieChatAvatar}
@@ -304,7 +291,7 @@ const ChatbotWidget = () => {
                   "max-w-[75%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed",
                   msg.sender === "user"
                     ? "bg-primary text-primary-foreground rounded-br-md"
-                    : "bg-muted text-foreground rounded-bl-md"
+                    : "bg-muted text-foreground rounded-bl-md",
                 )}
               >
                 {msg.text}
