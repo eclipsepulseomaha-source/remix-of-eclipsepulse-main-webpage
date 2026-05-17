@@ -2,3 +2,9 @@ project_id = "gtncendzunzhzylzcgrm"
 
 [functions.send-contact-email]
 verify_jwt = false
+
+[functions.chat-webhook]
+verify_jwt = false
+
+[functions.gsc-setup]
+verify_jwt = false
