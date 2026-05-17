@@ -1,0 +1,15 @@
+# Eclipse Pulse
+
+> Eclipse Pulse builds smart AI chatbots for Omaha-area small businesses — automating customer support, answering questions, and booking appointments 24/7.
+
+Eclipse Pulse is run by Curtis and Ivan Lovegren out of Omaha, Nebraska. The flagship product is "Clipsie," an AI chatbot embedded on client websites. Curtis handles human points of contact during business hours; Clipsie covers everything else around the clock.
+
+Contact: hello@eclipsepulseomaha.com · (412) 326-7688
+
+## Pages
+
+- [Home](/): Overview of services, founders, benefits stats, and contact form.
+
+## Optional
+
+- [Sitemap](/sitemap.xml): Machine-readable list of public routes.
