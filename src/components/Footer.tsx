@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <img 
               src={logo} 
-              alt="EclipsePulse" 
+              alt="EclipsePulse company logo" 
               className="h-10 w-auto mb-4"
             />
             <p className="text-muted-foreground text-sm max-w-xs">
