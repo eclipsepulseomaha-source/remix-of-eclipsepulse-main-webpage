@@ -16,6 +16,10 @@ const Hero = () => {
           src={logo} 
           alt="" 
           aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          width="1920"
+          height="1080"
           className="w-full h-auto max-h-screen object-contain brightness-110 contrast-105"
           style={{
             filter: 'brightness(1.1) contrast(1.05) drop-shadow(0 0 60px rgba(255, 200, 100, 0.4))',

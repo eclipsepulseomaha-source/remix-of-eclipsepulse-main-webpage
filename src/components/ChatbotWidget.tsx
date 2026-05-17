@@ -201,7 +201,7 @@ const ChatbotWidget = () => {
               <div className="h-full w-full rounded-full overflow-hidden bg-card">
                 <img
                   src={clipsieAvatar}
-                  alt="Clipsie"
+                  alt="Clipsie chatbot avatar"
                   className="h-full w-full object-cover scale-[1.17] translate-y-[7%] -translate-x-[8%]"
                 />
               </div>
@@ -251,7 +251,7 @@ const ChatbotWidget = () => {
               className="h-9 w-9 rounded-full p-[2px]"
               style={{ background: "linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--gradient-amber)))" }}
             >
-              <img src={clipsieChatAvatar} alt="Clipsie" className="h-full w-full rounded-full object-cover" />
+              <img src={clipsieChatAvatar} alt="Clipsie chatbot avatar" className="h-full w-full rounded-full object-cover" />
             </div>
             <div>
               <span className="text-sm font-semibold text-foreground">Clipsie</span>
@@ -282,7 +282,7 @@ const ChatbotWidget = () => {
               {msg.sender === "bot" && (
                 <img
                   src={clipsieChatAvatar}
-                  alt="Clipsie"
+                  alt="Clipsie chatbot avatar"
                   className="h-7 w-7 rounded-full object-cover flex-shrink-0 mt-1"
                 />
               )}
