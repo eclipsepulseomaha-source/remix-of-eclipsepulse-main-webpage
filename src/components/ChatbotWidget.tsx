@@ -314,6 +314,7 @@ const ChatbotWidget = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type a message..."
+              aria-label="Type a message"
               className="flex-1 rounded-xl border border-border bg-muted/50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
             />
             <button
