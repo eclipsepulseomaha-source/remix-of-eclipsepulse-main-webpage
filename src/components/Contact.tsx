@@ -109,6 +109,7 @@ const Contact = () => {
                 <div>
                   <Input
                     placeholder="Your Name"
+                    aria-label="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="bg-muted/50 border-border"
@@ -121,6 +122,7 @@ const Contact = () => {
                   <Input
                     type="tel"
                     placeholder="Phone Number"
+                    aria-label="Phone Number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="bg-muted/50 border-border"
@@ -132,6 +134,7 @@ const Contact = () => {
                   <Input
                     type="email"
                     placeholder="Email Address"
+                    aria-label="Email Address"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-muted/50 border-border"
@@ -143,6 +146,7 @@ const Contact = () => {
                 <div>
                   <Input
                     placeholder="Business Name"
+                    aria-label="Business Name"
                     value={formData.business}
                     onChange={(e) => setFormData({ ...formData, business: e.target.value })}
                     className="bg-muted/50 border-border"
@@ -153,6 +157,7 @@ const Contact = () => {
                 <div>
                   <Textarea
                     placeholder="Tell us about your business and what you're looking for..."
+                    aria-label="Tell us about your business and what you're looking for"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="bg-muted/50 border-border min-h-32"
