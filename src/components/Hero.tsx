@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import logo from "@/assets/EclipsePulse_Logo_for_site.webp";
 
 const Hero = () => {
