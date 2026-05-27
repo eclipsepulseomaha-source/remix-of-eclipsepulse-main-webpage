@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import logo from "@/assets/EclipsePulse_Logo_for_site.webp";
 
 const Hero = () => {
@@ -53,11 +53,6 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center stagger-children">
-          {/* Badge */}
-          <div className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 border border-border mb-8 backdrop-blur-sm">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm text-muted-foreground">AI-Powered Solutions for Local Businesses</span>
-          </div>
 
           {/* Spacer to push content below logo text area */}
           <div className="h-32 md:h-[12.875rem] lg:h-[14.125rem]" />
