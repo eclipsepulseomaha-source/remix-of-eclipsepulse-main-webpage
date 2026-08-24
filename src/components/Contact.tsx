@@ -12,8 +12,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "(412) 326-7688",
-    href: "tel:+14123267688",
+    value: "(402) 235-6013",
+    href: "tel:+14022356013",
   },
   {
     icon: Mail,
