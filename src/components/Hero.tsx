@@ -1,4 +1,4 @@
-import logo from "@/assets/EclipsePulse_Logo_for_site.webp";
+import logoAsset from "@/assets/EclipsePulse_Logo_transparent.png.asset.json";
 
 const Hero = () => {
   return (
@@ -8,20 +8,16 @@ const Hero = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-glow-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
       
-      {/* Full-width logo background - seamlessly merged */}
+      {/* Hero logo - transparent, tightly cropped artwork */}
       <div className="absolute inset-x-0 top-[2.75rem] md:top-[3.25rem] flex flex-col items-center">
         <img 
-          src={logo} 
-          alt="" 
-          aria-hidden="true"
+          src={logoAsset.url} 
+          alt="Eclipse Pulse logo"
           fetchPriority="high"
           decoding="async"
-          width="1920"
-          height="1080"
-          className="w-full h-auto max-h-screen object-contain brightness-110 contrast-105"
-          style={{
-            filter: 'brightness(1.1) contrast(1.05) drop-shadow(0 0 60px rgba(255, 200, 100, 0.4))',
-          }}
+          width="1116"
+          height="410"
+          className="w-[72.7%] h-auto"
         />
         {/* Services line - page main heading */}
         <h1
