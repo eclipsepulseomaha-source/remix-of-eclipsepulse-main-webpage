@@ -20,7 +20,7 @@ const NotFound = () => {
         <meta property="og:description" content="This Eclipse Pulse page could not be found. Return home to explore our AI chatbot services for Omaha businesses." />
         <meta property="og:url" content="https://eclipsepulseomaha.com/404" />
       </Helmet>
-      <div className="flex min-h-screen items-center justify-center bg-muted">
+      <div className="flex min-h-screen items-center justify-center bg-muted pt-12 md:pt-14">
         <div className="text-center">
           <h1 className="mb-4 text-4xl font-bold">404</h1>
           <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
