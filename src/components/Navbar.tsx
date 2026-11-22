@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/EclipsePulse_Logo.png";
 
@@ -17,6 +17,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const pathname = useLocation({ select: (l) => l.pathname });
+
+  // Close whenever the page changes (links, Back/Forward, any navigation).
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -55,7 +61,14 @@ const Navbar = () => {
           <button
             ref={buttonRef}
             type="button"
-            onClick={() => setIsOpen((o) => !o)}
+            onClick={() => {
+              if (isOpen) {
+                setIsOpen(false);
+                buttonRef.current?.focus();
+              } else {
+                setIsOpen(true);
+              }
+            }}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="site-menu"
