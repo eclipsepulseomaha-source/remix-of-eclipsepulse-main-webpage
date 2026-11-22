@@ -1,91 +1,109 @@
-import { useClipsie } from "@/components/ClipsieContext";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/EclipsePulse_Logo.png";
 
-const Navbar = () => {
-  const { openClipsie } = useClipsie();
-  const [isOpen, setIsOpen] = useState(false);
+const menuItems = [
+  { to: "/", label: "Home" },
+  { to: "/website-design", label: "Website Design" },
+  { to: "/ai-chatbots", label: "AI Chatbots" },
+  { to: "/website-updates-fixes", label: "Website Updates/Fixes" },
+  { to: "/graphic-design", label: "Graphic Design" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+] as const;
 
-  const navLinks = [
-    { href: "#services", label: "Services" },
-    { href: "#benefits", label: "Benefits" },
-    { href: "#about", label: "About" },
-    { href: "#contact", label: "Contact" },
-  ];
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onPointer = (e: PointerEvent) => {
+      const t = e.target as Node;
+      if (panelRef.current?.contains(t) || buttonRef.current?.contains(t)) return;
+      setIsOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        buttonRef.current?.focus();
+      }
+    };
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [isOpen]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:relative">
         <div className="flex items-center justify-between h-12 md:h-14">
           {/* Logo */}
-          <a href="#" className="flex items-center overflow-hidden h-12 md:h-14 pr-12 -ml-12 pl-12" style={{ background: 'linear-gradient(to right, hsl(0,0%,0%) calc(100% - 35px), transparent 100%)' }}>
-            <img 
-              src={logo} 
-              alt="EclipsePulse company logo" 
+          <Link to="/" className="flex items-center overflow-hidden h-12 md:h-14 pr-12 -ml-12 pl-12" style={{ background: 'linear-gradient(to right, hsl(0,0%,0%) calc(100% - 35px), transparent 100%)' }}>
+            <img
+              src={logo}
+              alt="EclipsePulse company logo"
               className="h-20 md:h-[6.25rem] w-auto"
             />
-          </a>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
-            <Button 
-              variant="gradient" 
-              size="lg"
-              className="font-bold text-primary-foreground/90"
-              style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)' }}
-              onClick={() => openClipsie()}
-            >
-              Ask Away
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            ref={buttonRef}
+            type="button"
+            onClick={() => setIsOpen((o) => !o)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="site-menu"
+            className="flex h-11 w-11 items-center justify-center rounded-[10px] bg-transparent text-[#F8FAFC] transition-colors duration-150 hover:bg-[#21242C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3C83F6]"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium py-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <Button 
-                variant="gradient" 
-                size="lg" 
-                className="mt-2 font-bold text-primary-foreground/90"
-                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)' }}
-                onClick={() => { setIsOpen(false); openClipsie(); }}
+      <div
+        id="site-menu"
+        ref={panelRef}
+        aria-hidden={!isOpen}
+        inert={!isOpen}
+        className={[
+          "absolute left-0 right-0 top-full border-b border-[#272C35] bg-[#0E1115] p-2 shadow-[0_10px_30px_rgba(0,0,0,0.5)]",
+          "sm:left-auto sm:w-80 sm:mt-2 sm:rounded-xl sm:border sm:right-4",
+          "transition-[opacity,transform] duration-150 ease-out motion-reduce:transition-opacity motion-reduce:translate-y-0",
+          isOpen ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-2",
+        ].join(" ")}
+      >
+        <ul className="flex flex-col">
+          {menuItems.map((item) => (
+            <li key={item.to}>
+              <Link
+                to={item.to}
+                onClick={() => setIsOpen(false)}
+                activeOptions={{ exact: true }}
+                className="relative block rounded-lg px-4 py-3 text-base font-medium text-[#94A3B8] transition-colors duration-150 hover:bg-[#21242C] hover:text-[#F8FAFC] data-[status=active]:text-[#F8FAFC]"
+                activeProps={{ "aria-current": "page" }}
               >
-                Ask Away
-              </Button>
-            </div>
-          </div>
-        )}
+                {({ isActive }) => (
+                  <>
+                    {isActive && (
+                      <span
+                        aria-hidden
+                        className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full"
+                        style={{ background: "linear-gradient(to bottom, #3C83F6, #F99E1F, #F97015)" }}
+                      />
+                    )}
+                    {item.label}
+                  </>
+                )}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
       </div>
     </nav>
   );
