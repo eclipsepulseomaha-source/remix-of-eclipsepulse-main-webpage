@@ -1,10 +1,6 @@
-import { useClipsie } from "@/components/ClipsieContext";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import logo from "@/assets/EclipsePulse_Logo_for_site.webp";
 
 const Hero = () => {
-  const { openClipsie } = useClipsie();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-14">
       {/* Background gradient glow effects */}
@@ -13,7 +9,7 @@ const Hero = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
       
       {/* Full-width logo background - seamlessly merged */}
-      <div className="absolute inset-x-0 top-[2.75rem] md:top-[3.25rem] flex items-start justify-center">
+      <div className="absolute inset-x-0 top-[2.75rem] md:top-[3.25rem] flex flex-col items-center">
         <img 
           src={logo} 
           alt="" 
@@ -27,6 +23,16 @@ const Hero = () => {
             filter: 'brightness(1.1) contrast(1.05) drop-shadow(0 0 60px rgba(255, 200, 100, 0.4))',
           }}
         />
+        {/* Services line - page main heading */}
+        <h1
+          className="relative z-10 mt-6 text-center font-bold text-2xl lg:text-4xl sm:whitespace-nowrap px-4"
+          style={{ color: "#F8FAFC", letterSpacing: "normal", lineHeight: 1.2 }}
+        >
+          <span className="whitespace-nowrap">Web Design <span aria-hidden="true" style={{ color: "#F99E1F" }}>·</span> AI Chatbots</span>
+          <span className="hidden sm:inline"> <span aria-hidden="true" style={{ color: "#F99E1F" }}>·</span> </span>
+          <br className="sm:hidden" />
+          <span className="whitespace-nowrap">Site Updates <span aria-hidden="true" style={{ color: "#F99E1F" }}>·</span> Graphic Design</span>
+        </h1>
       </div>
       
       {/* Left edge fade overlay - narrower to preserve center */}
@@ -58,48 +64,6 @@ const Hero = () => {
 
           {/* Spacer to push content below logo text area */}
           <div className="h-32 md:h-[12.875rem] lg:h-[14.125rem]" />
-
-          {/* Main Headline */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight md:leading-none">
-            Smart AI Chatbots for
-            <br />
-            <span className="gradient-text" style={{ WebkitTextStroke: 'inherit', filter: 'drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.6))' }}>
-              <span className="md:hidden font-extrabold" style={{ WebkitTextStroke: '0.5px rgba(10, 12, 20, 0.5)' }}>Your Business</span>
-              <span className="hidden md:inline">Your Business</span>
-            </span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed md:leading-7 backdrop-blur-sm">
-            Help your customers find answers instantly, 24/7. Our AI chatbots handle questions, 
-            book appointments, and free up your time—so you can focus on what you do best.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="gradient"
-              size="xl"
-              className="group"
-              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get Straight to Us
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <div className="relative">
-              <div className="absolute inset-0 rounded-lg bg-secondary/40 blur-xl opacity-60 animate-glow-pulse" />
-              <Button
-                variant="outline"
-                size="xl"
-                className="relative"
-                onClick={() => {
-                  openClipsie();
-                }}
-              >
-                Meet Our Chatbot
-              </Button>
-            </div>
-          </div>
 
           {/* Trust Indicators */}
           <div className="mt-12 pt-8 border-t border-border/50">
