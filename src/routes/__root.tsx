@@ -13,6 +13,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import ChatbotWidget from "@/components/ChatbotWidget";
+import { ClipsieProvider } from "@/components/ClipsieContext";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import appCss from "../styles.css?url";
 
@@ -93,7 +95,10 @@ function RootComponent() {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <Outlet />
+          <ClipsieProvider>
+            <Outlet />
+            <ChatbotWidget />
+          </ClipsieProvider>
         </TooltipProvider>
       </QueryClientProvider>
     </HelmetProvider>

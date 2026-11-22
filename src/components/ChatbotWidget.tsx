@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import clipsieAvatar from "@/assets/clipsie-avatar.png";
 import clipsieChatAvatar from "@/assets/clipsie-chat-avatar.png";
+import { useClipsie } from "@/components/ClipsieContext";
 
 interface Message {
   id: number;
@@ -20,7 +21,7 @@ const INITIAL_MESSAGES: Message[] = [
 ];
 
 const ChatbotWidget = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, openClipsie, closeClipsie } = useClipsie();
   const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
   const [input, setInput] = useState("");
   const [sessionId] = useState(() => crypto.randomUUID());
@@ -29,12 +30,6 @@ const ChatbotWidget = () => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-
-  useEffect(() => {
-    const handler = () => setIsOpen(true);
-    window.addEventListener("open-clipsie-chat", handler);
-    return () => window.removeEventListener("open-clipsie-chat", handler);
-  }, []);
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -113,7 +108,7 @@ const ChatbotWidget = () => {
           {/* Clickable button face */}
           <button
             style={{ zIndex: 2 }}
-            onClick={() => setIsOpen(true)}
+            onClick={openClipsie}
             className={cn(
               "relative h-[84px] w-[84px] rounded-full transition-all duration-100 focus:outline-none",
               "translate-x-[-3px] translate-y-[-3px]",
@@ -211,7 +206,7 @@ const ChatbotWidget = () => {
 
         {/* "Curious how I work?" label */}
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={openClipsie}
           className="px-5 py-2 rounded-xl text-primary-foreground text-sm font-bold text-center hover:opacity-90 transition-opacity cursor-pointer"
           style={{
             background: "linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%)",
@@ -234,7 +229,7 @@ const ChatbotWidget = () => {
           "fixed inset-0 z-50 bg-background/60 backdrop-blur-sm transition-opacity duration-300",
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
-        onClick={() => setIsOpen(false)}
+        onClick={closeClipsie}
       />
 
       {/* Side drawer */}
@@ -259,7 +254,7 @@ const ChatbotWidget = () => {
             </div>
           </div>
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={closeClipsie}
             className="rounded-md p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
             aria-label="Close chat"
           >

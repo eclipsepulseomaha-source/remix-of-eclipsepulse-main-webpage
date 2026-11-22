@@ -1,3 +1,4 @@
+import { useClipsie } from "@/components/ClipsieContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -36,6 +37,7 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+  const { openClipsie } = useClipsie();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -101,7 +103,7 @@ const Contact = () => {
                   className="w-full h-10 justify-start px-3 bg-gradient-to-r from-primary via-accent to-secondary border-0 text-primary-foreground font-bold"
                   style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 -1px 0 rgba(255,255,255,0.2)' }}
                   onClick={() => {
-                    window.dispatchEvent(new CustomEvent("open-clipsie-chat"));
+                    openClipsie();
                   }}
                 >
                   Use Our Chatbot

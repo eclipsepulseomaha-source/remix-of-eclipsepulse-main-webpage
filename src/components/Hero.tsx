@@ -1,8 +1,10 @@
+import { useClipsie } from "@/components/ClipsieContext";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import logo from "@/assets/EclipsePulse_Logo_for_site.webp";
 
 const Hero = () => {
+  const { openClipsie } = useClipsie();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-14">
       {/* Background gradient glow effects */}
@@ -91,7 +93,7 @@ const Hero = () => {
                 size="xl"
                 className="relative"
                 onClick={() => {
-                  window.dispatchEvent(new CustomEvent("open-clipsie-chat"));
+                  openClipsie();
                 }}
               >
                 Meet Our Chatbot
