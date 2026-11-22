@@ -204,7 +204,7 @@ const ChatbotWidget = () => {
           </button>
         </div>
 
-        {/* "Curious how I work?" label */}
+        {/* "Meet Clipsie" label */}
         <button
           onClick={openClipsie}
           className="px-5 py-2 rounded-xl text-primary-foreground text-sm font-bold text-center hover:opacity-90 transition-opacity cursor-pointer"
@@ -219,7 +219,7 @@ const ChatbotWidget = () => {
           }}
           aria-label="Open chat with Clipsie"
         >
-          Curious how I work?
+          Meet Clipsie
         </button>
       </div>
 
