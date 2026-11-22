@@ -21,13 +21,15 @@ const Hero = () => {
         />
         {/* Services line - page main heading */}
         <h1
-          className="relative z-10 mt-6 text-center font-bold text-2xl lg:text-4xl sm:whitespace-nowrap px-4"
-          style={{ color: "#F8FAFC", letterSpacing: "normal", lineHeight: 1.2 }}
+          className="relative z-10 mt-6 text-center font-bold italic text-2xl lg:text-4xl sm:whitespace-nowrap px-4"
+          style={{ letterSpacing: "normal", lineHeight: 1.2 }}
         >
-          <span className="whitespace-nowrap">Web Design <span aria-hidden="true" style={{ color: "#F99E1F" }}>·</span> AI Chatbots</span>
-          <span className="hidden sm:inline"> <span aria-hidden="true" style={{ color: "#F99E1F" }}>·</span> </span>
-          <br className="sm:hidden" />
-          <span className="whitespace-nowrap">Site Updates <span aria-hidden="true" style={{ color: "#F99E1F" }}>·</span> Graphic Design</span>
+          <span className="hero-services-gradient">
+            <span className="whitespace-nowrap">Web Design <span aria-hidden="true">·</span> AI Chatbots</span>
+            <span className="hidden sm:inline"> <span aria-hidden="true">·</span> </span>
+            <br className="sm:hidden" />
+            <span className="whitespace-nowrap">Site Updates <span aria-hidden="true">·</span> Graphic Design</span>
+          </span>
         </h1>
       </div>
       

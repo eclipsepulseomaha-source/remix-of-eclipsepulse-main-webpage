@@ -238,6 +238,21 @@
 }
 
 @layer utilities {
+  /* Home page services line: one continuous orange-to-blue gradient across the
+     heading text. box-decoration-break: clone makes each wrapped line (phone)
+     paint the full gradient again from its own left edge to its right edge. */
+  .hero-services-gradient {
+    background-image: linear-gradient(to right, #F97015 0%, #F99E1F 50%, #3C83F6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    padding-left: 0.15em;
+    padding-right: 0.15em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
   /* Animated gradient */
   .animate-gradient {
     background-size: 200% 200%;
