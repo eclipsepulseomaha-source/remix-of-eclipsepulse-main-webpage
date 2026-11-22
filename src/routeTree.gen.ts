@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AiChatbotsRouteImport } from './routes/ai-chatbots'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GraphicDesignRouteImport } from './routes/graphic-design'
+import { Route as WebsiteDesignRouteImport } from './routes/website-design'
+import { Route as WebsiteUpdatesFixesRouteImport } from './routes/website-updates-fixes'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiChatbotsRoute = AiChatbotsRouteImport.update({
+  id: '/ai-chatbots',
+  path: '/ai-chatbots',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GraphicDesignRoute = GraphicDesignRouteImport.update({
+  id: '/graphic-design',
+  path: '/graphic-design',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteDesignRoute = WebsiteDesignRouteImport.update({
+  id: '/website-design',
+  path: '/website-design',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteUpdatesFixesRoute = WebsiteUpdatesFixesRouteImport.update({
+  id: '/website-updates-fixes',
+  path: '/website-updates-fixes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-chatbots': typeof AiChatbotsRoute
+  '/contact': typeof ContactRoute
+  '/graphic-design': typeof GraphicDesignRoute
+  '/website-design': typeof WebsiteDesignRoute
+  '/website-updates-fixes': typeof WebsiteUpdatesFixesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-chatbots': typeof AiChatbotsRoute
+  '/contact': typeof ContactRoute
+  '/graphic-design': typeof GraphicDesignRoute
+  '/website-design': typeof WebsiteDesignRoute
+  '/website-updates-fixes': typeof WebsiteUpdatesFixesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/ai-chatbots': typeof AiChatbotsRoute
+  '/contact': typeof ContactRoute
+  '/graphic-design': typeof GraphicDesignRoute
+  '/website-design': typeof WebsiteDesignRoute
+  '/website-updates-fixes': typeof WebsiteUpdatesFixesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/ai-chatbots'
+    | '/contact'
+    | '/graphic-design'
+    | '/website-design'
+    | '/website-updates-fixes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/ai-chatbots'
+    | '/contact'
+    | '/graphic-design'
+    | '/website-design'
+    | '/website-updates-fixes'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/ai-chatbots'
+    | '/contact'
+    | '/graphic-design'
+    | '/website-design'
+    | '/website-updates-fixes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AiChatbotsRoute: typeof AiChatbotsRoute
+  ContactRoute: typeof ContactRoute
+  GraphicDesignRoute: typeof GraphicDesignRoute
+  WebsiteDesignRoute: typeof WebsiteDesignRoute
+  WebsiteUpdatesFixesRoute: typeof WebsiteUpdatesFixesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-chatbots': {
+      id: '/ai-chatbots'
+      path: '/ai-chatbots'
+      fullPath: '/ai-chatbots'
+      preLoaderRoute: typeof AiChatbotsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/graphic-design': {
+      id: '/graphic-design'
+      path: '/graphic-design'
+      fullPath: '/graphic-design'
+      preLoaderRoute: typeof GraphicDesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-design': {
+      id: '/website-design'
+      path: '/website-design'
+      fullPath: '/website-design'
+      preLoaderRoute: typeof WebsiteDesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-updates-fixes': {
+      id: '/website-updates-fixes'
+      path: '/website-updates-fixes'
+      fullPath: '/website-updates-fixes'
+      preLoaderRoute: typeof WebsiteUpdatesFixesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AiChatbotsRoute: AiChatbotsRoute,
+  ContactRoute: ContactRoute,
+  GraphicDesignRoute: GraphicDesignRoute,
+  WebsiteDesignRoute: WebsiteDesignRoute,
+  WebsiteUpdatesFixesRoute: WebsiteUpdatesFixesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

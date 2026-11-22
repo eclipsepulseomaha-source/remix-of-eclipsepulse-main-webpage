@@ -42,7 +42,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "keywords", content: "AI chatbot, Omaha NE, small business, customer support, automation, EclipsePulse" },
       { name: "google-site-verification", content: "QPmWKAGdlIE3LQyzw2WoVBJvDlg8vGt8jAAo6fXOv7A" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://eclipsepulseomaha.com/" },
       { property: "og:title", content: "Eclipse Pulse | AI Chatbots for Omaha Businesses" },
       {
         property: "og:description",
@@ -62,7 +61,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
-      { rel: "canonical", href: "https://eclipsepulseomaha.com/" },
     ],
     scripts: [
       { type: "application/ld+json", children: LOCAL_BUSINESS_LD },
