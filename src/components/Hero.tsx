@@ -2,7 +2,7 @@ import logoAsset from "@/assets/EclipsePulse_Logo_transparent.png.asset.json";
 
 const Hero = () => {
   return (
-    <section className="relative pt-24 pb-16">
+    <section className="relative pt-[76px] sm:pt-20 pb-6 sm:pb-8">
       {/* Background layers - glow effects and edge fades, all behind the logo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
         <div className="absolute inset-0 gradient-bg" />
@@ -18,7 +18,7 @@ const Hero = () => {
         />
         <div
           className="absolute bottom-0 left-0 right-0 h-full"
-          style={{ background: 'linear-gradient(to top, hsl(220 15% 12%) 0%, hsl(220 18% 8%) 20%, hsl(220 20% 6%) 35%, hsl(220 20% 5%) 45%, transparent 70%)' }}
+          style={{ background: 'linear-gradient(to top, hsl(var(--background)) 0%, hsl(var(--background)) 8%, transparent 65%)' }}
         />
       </div>
 
@@ -35,7 +35,7 @@ const Hero = () => {
         />
         {/* Services line - page main heading */}
         <h1
-          className="mt-6 text-center font-bold italic text-2xl lg:text-4xl sm:whitespace-nowrap px-4"
+          className="mt-1 sm:mt-2 text-center font-bold italic text-2xl lg:text-4xl sm:whitespace-nowrap px-4"
           style={{ letterSpacing: "normal", lineHeight: 1.2 }}
         >
           <span className="hero-services-gradient">
