@@ -1,0 +1,15 @@
+{
+  "customizations": [
+    { "token": "--background..--sidebar-ring HSL color tokens (:root and .dark)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--gradient-blue/--gradient-orange/--gradient-amber", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--glow-primary/--glow-secondary", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "gradient-text / eclipse-glow / gradient-bg / gradient-border", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "animate-gradient / pulse-glow / fade-in / stagger-children / firefly-glow", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "forced-color-adjust: none rules", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "colors gradient-blue/orange/amber + sidebar", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "bg-gradient-radial / bg-gradient-eclipse", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "animate-float / animate-glow-pulse / accordion keyframes", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "container (center, 2rem padding, 1400px)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "radius sm/md/lg", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" }
+  ]
+}

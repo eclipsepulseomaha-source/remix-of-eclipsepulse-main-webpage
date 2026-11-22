@@ -273,8 +273,7 @@ const ChatbotWidget = () => {
           style={{
             background: "linear-gradient(22deg, hsl(220 20% 7%) 40%, hsl(217 91% 60% / 0.25) 100%)",
             forcedColorAdjust: "none",
-            // @ts-ignore
-            msHighContrastAdjust: "none",
+            ...({ msHighContrastAdjust: "none" } as React.CSSProperties),
           }}
         >
           {messages.map((msg) => (

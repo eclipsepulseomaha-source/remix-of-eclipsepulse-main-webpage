@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="h-32 md:h-[12.875rem] lg:h-[14.125rem]" />
 
           {/* Main Headline */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight md:leading-none">
             Smart AI Chatbots for
             <br />
             <span className="gradient-text" style={{ WebkitTextStroke: 'inherit', filter: 'drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.6))' }}>
@@ -68,7 +68,7 @@ const Hero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed backdrop-blur-sm">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed md:leading-7 backdrop-blur-sm">
             Help your customers find answers instantly, 24/7. Our AI chatbots handle questions, 
             book appointments, and free up your time—so you can focus on what you do best.
           </p>

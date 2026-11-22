@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 interface Firefly {
   id: number;
@@ -93,7 +93,11 @@ interface FirefliesProps {
 }
 
 const Fireflies = ({ count = 18 }: FirefliesProps) => {
-  const [fireflies] = useState(() => generateFireflies(count));
+  // Randomised on the client after first paint so server and browser HTML match.
+  const [fireflies, setFireflies] = useState<Firefly[]>([]);
+  useEffect(() => {
+    setFireflies(generateFireflies(count));
+  }, [count]);
 
   const styleSheet = useMemo(() => {
     return fireflies

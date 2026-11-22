@@ -194,7 +194,7 @@ const Contact = () => {
               Call or email—we're here to help.
             </p>
 
-            <div className="space-y-4 mt-8">
+            <div className="space-y-4">
               {contactInfo.map((item, index) => (
                 <div 
                   key={index}

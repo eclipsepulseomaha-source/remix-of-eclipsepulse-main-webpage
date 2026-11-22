@@ -1,0 +1,4 @@
+{"functions": [
+  {"name": "chat-webhook", "classification": "internal-only", "signal": "called from src/components/ChatbotWidget.tsx; kept on backend at the user's explicit request (do not change backend functions)", "outcome": "left"},
+  {"name": "send-contact-email", "classification": "internal-only", "signal": "called from src/components/Contact.tsx; kept on backend at the user's explicit request (do not change backend functions)", "outcome": "left"}
+]}
