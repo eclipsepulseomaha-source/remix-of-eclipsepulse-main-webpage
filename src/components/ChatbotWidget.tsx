@@ -74,7 +74,7 @@ const ChatbotWidget = () => {
       <div
         style={{ bottom: "10px", right: "18px" }}
         className={cn(
-          "fixed z-50 flex flex-col items-end gap-3 transition-all duration-150",
+          "fixed z-50 flex flex-col items-center gap-3 transition-all duration-150",
           isOpen && "scale-0 opacity-0 pointer-events-none",
         )}
       >
@@ -216,10 +216,12 @@ const ChatbotWidget = () => {
               "0 3px 8px hsl(0 0% 0% / 0.4), " +
               "0 1px 2px hsl(0 0% 0% / 0.3)",
             textShadow: "0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)",
+            lineHeight: "16px",
+            whiteSpace: "pre-line",
           }}
-          aria-label="Open chat with Clipsie"
+          aria-label="Meet Clipsie"
         >
-          Meet Clipsie
+          {"Meet\nClipsie"}
         </button>
       </div>
 
