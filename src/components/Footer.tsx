@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/EclipsePulse_Logo.png";
 
 const Footer = () => {
@@ -7,36 +8,53 @@ const Footer = () => {
   return (
     <footer className="bg-card/50 border-t border-border py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <img 
-              src={logo} 
-              alt="EclipsePulse company logo" 
-              className="h-10 w-auto mb-4"
-            />
+            <Link to="/" className="inline-block">
+              <img
+                src={logo}
+                alt="EclipsePulse company logo"
+                className="h-10 w-auto mb-4"
+              />
+            </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
-              Making AI simple for small businesses in Omaha and beyond. 
-              Smart chatbots that work for you, 24/7.
+              Websites, AI chatbots, site updates, and graphic design for Omaha small businesses, all from one local team.
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Services */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
-            <nav className="space-y-2">
-              <a href="#services" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
-                Our Services
-              </a>
-              <a href="#benefits" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
-                Why Chatbots
-              </a>
-              <a href="#about" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
-                About the Guys
-              </a>
-              <a href="#contact-form" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
-                Contact Us
-              </a>
+            <h4 className="font-semibold text-foreground mb-4">Services</h4>
+            <nav aria-label="Services" className="space-y-3">
+              <Link to="/website-design" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Website Design
+              </Link>
+              <Link to="/ai-chatbots" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
+                AI Chatbots
+              </Link>
+              <Link to="/website-updates-fixes" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Website Updates/Fixes
+              </Link>
+              <Link to="/graphic-design" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Graphic Design
+              </Link>
+            </nav>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Company</h4>
+            <nav aria-label="Company" className="space-y-3">
+              <Link to="/" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Home
+              </Link>
+              <Link to="/about" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
+                About
+              </Link>
+              <Link to="/contact" className="block text-muted-foreground hover:text-foreground text-sm transition-colors">
+                Contact
+              </Link>
             </nav>
           </div>
 
