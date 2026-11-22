@@ -56,29 +56,7 @@ const Hero = () => {
           background: 'linear-gradient(to top, hsl(220 15% 12%) 0%, hsl(220 18% 8%) 20%, hsl(220 20% 6%) 35%, hsl(220 20% 5%) 45%, transparent 70%)',
         }}
       />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center stagger-children">
 
-          {/* Spacer to push content below logo text area */}
-          <div className="h-32 md:h-[12.875rem] lg:h-[14.125rem]" />
-
-          {/* Trust Indicators */}
-          <div className="mt-12 pt-8 border-t border-border/50">
-            <p className="text-sm text-muted-foreground mb-4">
-              Trusted by businesses across Omaha, NE
-            </p>
-            <div className="flex flex-wrap justify-center gap-8 text-muted-foreground/60">
-              <span className="text-sm font-medium">Restaurants</span>
-              <span className="text-sm font-medium">Plumbers</span>
-              <span className="text-sm font-medium">Retail Shops</span>
-              <span className="text-sm font-medium">Dental Offices</span>
-              <span className="text-sm font-medium">HVAC Services</span>
-              <span className="text-sm font-medium">Law Firms</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
