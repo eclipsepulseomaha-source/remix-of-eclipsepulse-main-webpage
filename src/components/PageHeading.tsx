@@ -29,6 +29,11 @@ export default function PageHeading({
           // space, leaving the layout exactly where it was.
           paddingBottom: "0.25em",
           marginBottom: "-0.25em",
+          // Soft black glow. text-shadow would bleed through the transparent
+          // letter fill and muddy the gradient, so drop-shadow is used instead:
+          // it shadows the painted shape of the letters only.
+          filter:
+            "drop-shadow(0 0 8px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 18px rgba(0, 0, 0, 0.7))",
         }}
       >
         {title}
