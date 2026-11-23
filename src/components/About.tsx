@@ -70,7 +70,8 @@ const About = ({
                 '0 0 10px rgba(60, 131, 246, 0.55), 0 0 22px rgba(60, 131, 246, 0.35)',
             }}
           >
-            Rooted in Omaha. Built for Omaha Businesses.
+            <span className="whitespace-nowrap">Rooted in Omaha. Built for</span>{" "}
+            <span className="whitespace-nowrap block sm:inline">Omaha Businesses.</span>
           </h3>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
