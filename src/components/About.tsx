@@ -21,7 +21,13 @@ const About = () => {
           <p className="text-center text-xl mb-2">
             <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
           </p>
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8 italic">
+          <h3
+            className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8 italic"
+            style={{
+              textShadow:
+                '0 0 10px rgba(60, 131, 246, 0.55), 0 0 22px rgba(60, 131, 246, 0.35)',
+            }}
+          >
             Rooted in Omaha. Built for Omaha Businesses.
           </h3>
 
