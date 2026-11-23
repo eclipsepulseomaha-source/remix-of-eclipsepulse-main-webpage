@@ -13,27 +13,31 @@ export default function PageHeading({
     <main
       className={`${transparentBackground ? "" : "bg-background"} pt-32 ${bottomPaddingClass} text-center`}
     >
-      <div className="inline-flex flex-col items-stretch max-w-full">
-        <h1
-          className="text-3xl md:text-4xl lg:text-5xl font-bold"
-          style={{
-            backgroundImage: HEADING_GRADIENT,
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-            WebkitTextFillColor: "transparent",
-            paddingBottom: "0.1em",
-            marginBottom: "-0.1em",
-          }}
-        >
-          {title}
-        </h1>
+      <h1
+        className="inline-block max-w-full text-3xl md:text-4xl lg:text-5xl font-bold"
+        style={{
+          position: "relative",
+          isolation: "isolate",
+          backgroundImage: HEADING_GRADIENT,
+          WebkitBackgroundClip: "text",
+          backgroundClip: "text",
+          color: "transparent",
+          WebkitTextFillColor: "transparent",
+          paddingBottom: "0.25em",
+        }}
+      >
+        {title}
         <span
           aria-hidden="true"
-          className="block rounded-full"
-          style={{ height: 3, marginTop: 10, backgroundImage: HEADING_GRADIENT }}
+          className="absolute left-0 right-0 rounded-full"
+          style={{
+            height: 3,
+            bottom: "calc(0.31em - 1.5px)",
+            zIndex: -1,
+            backgroundImage: HEADING_GRADIENT,
+          }}
         />
-      </div>
+      </h1>
     </main>
   );
 }
