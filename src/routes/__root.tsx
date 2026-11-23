@@ -23,7 +23,7 @@ import appCss from "../styles.css?url";
 const OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/U66skdrikLdYtavINj4vI4zb4X82/social-images/social-1771091737163-Screenshot_2026-02-14_115428.webp";
 
-const LOCAL_BUSINESS_LD = "    {\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"LocalBusiness\",\n      \"name\": \"Eclipse Pulse\",\n      \"url\": \"https://eclipsepulseomaha.com/\",\n      \"logo\": \"https://eclipsepulseomaha.com/favicon.png\",\n      \"description\": \"Eclipse Pulse builds smart AI chatbots for Omaha businesses \u2014 automating customer support and booking appointments 24/7.\",\n      \"telephone\": \"+1-402-235-6013\",\n      \"email\": \"hello@eclipsepulseomaha.com\",\n      \"address\": {\n        \"@type\": \"PostalAddress\",\n        \"addressLocality\": \"Omaha\",\n        \"addressRegion\": \"NE\",\n        \"addressCountry\": \"US\"\n      },\n      \"openingHoursSpecification\": {\n        \"@type\": \"OpeningHoursSpecification\",\n        \"dayOfWeek\": [\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\",\"Sunday\"],\n        \"opens\": \"00:00\",\n        \"closes\": \"23:59\"\n      }\n    }";
+const LOCAL_BUSINESS_LD = "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"ProfessionalService\",\n  \"name\": \"Eclipse Pulse\",\n  \"url\": \"https://eclipsepulseomaha.com/\",\n  \"logo\": \"https://eclipsepulseomaha.com/favicon.png\",\n  \"description\": \"Eclipse Pulse is an Omaha company that designs websites, builds AI chatbots, updates and fixes existing websites, and creates graphic design for small businesses.\",\n  \"telephone\": \"+1-402-235-6013\",\n  \"email\": \"hello@eclipsepulseomaha.com\",\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"addressLocality\": \"Omaha\",\n    \"addressRegion\": \"NE\",\n    \"addressCountry\": \"US\"\n  },\n  \"areaServed\": {\n    \"@type\": \"City\",\n    \"name\": \"Omaha\"\n  },\n  \"openingHoursSpecification\": {\n    \"@type\": \"OpeningHoursSpecification\",\n    \"dayOfWeek\": [\n      \"Monday\",\n      \"Tuesday\",\n      \"Wednesday\",\n      \"Thursday\",\n      \"Friday\",\n      \"Saturday\",\n      \"Sunday\"\n    ],\n    \"opens\": \"00:00\",\n    \"closes\": \"23:59\"\n  }\n}";
 
 const WEBSITE_LD = "    {\n      \"@context\": \"https://schema.org\",\n      \"@type\": \"WebSite\",\n      \"name\": \"Eclipse Pulse\",\n      \"url\": \"https://eclipsepulseomaha.com/\"\n    }";
 
@@ -39,7 +39,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Eclipse Pulse builds smart AI chatbots for Omaha small businesses — automating customer support, answering questions, and booking appointments 24/7.",
       },
       { name: "author", content: "Curtis Emmanuel Lovegren" },
-      { name: "keywords", content: "AI chatbot, Omaha NE, small business, customer support, automation, EclipsePulse" },
       { name: "google-site-verification", content: "QPmWKAGdlIE3LQyzw2WoVBJvDlg8vGt8jAAo6fXOv7A" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Eclipse Pulse | AI Chatbots for Omaha Businesses" },
