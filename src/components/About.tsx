@@ -18,19 +18,22 @@ const About = () => {
               }}
             >Founders</span>
           </h2>
-          <p className="text-center mb-8">
+          <p className="text-center mb-2">
             <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
           </p>
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8">
+            Rooted in Omaha. Built for Omaha Businesses.
+          </h3>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Content - upper portion */}
             <div className="relative z-10">
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  We grew up in Omaha, and after years of working with businesses on the East and West Coasts, we've come back home to bring that experience to the work we do here. We are grateful to be part of this city again and to serve the businesses that make it thrive.
+                  We're brothers who grew up in Omaha. After years of working with businesses on the East and West Coasts, we came back home to put that experience to work for the city that raised us.
                 </p>
                 <p>
-                  Our hands-on technical education began beside our dad who was helping small Omaha businesses get online in the early 1990s, installing modems, wiring offices, and literally connecting people to a new future.
+                  Our tech education started at our dad's side. In the early 1990s, he was helping small Omaha businesses get online: installing modems, wiring offices, and literally connecting people to a new future.
                 </p>
               </div>
             </div>
@@ -64,13 +67,13 @@ const About = () => {
           {/* Continued text - full width */}
           <div className="relative z-10 text-muted-foreground leading-relaxed space-y-4 mt-4">
             <p>
-              Back then, connectivity gave local businesses new power in a rapidly changing world. Today, we see AI as another practical tool to help local businesses compete.
+              Back then, getting connected gave Omaha businesses a new edge. Today, AI does the same. It's a practical tool that helps local businesses compete with companies many times their size.
             </p>
             <p>
-              Our aim is not just to keep Omaha businesses current with where commerce is headed. We want to help move them forward. We work with local companies to build and manage AI chatbots, and the surrounding digital pieces that make them work well, so they can operate with more confidence, more capacity, and more freedom to focus on what they do best.
+              We don't just want to keep Omaha businesses current. We want to help them lead. That's why we design websites, build AI chatbots, keep existing sites up to date, and create the graphics that tie a brand together. Then we stay on to manage it all, so you can focus on what you do best.
             </p>
             <p>
-              This is ultimately about loyalty to the community that raised us and partnership with the people who keep it running. That is the spirit behind Eclipse Pulse, built to power Omaha businesses as you continue to grow and evolve, with us alongside you.
+              For us, this is about loyalty to the community that raised us and partnership with the people who keep it running. That's the spirit behind Eclipse Pulse: an Omaha company, built to grow alongside Omaha businesses.
             </p>
           </div>
         </div>
