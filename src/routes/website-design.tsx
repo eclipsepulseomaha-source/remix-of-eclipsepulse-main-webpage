@@ -44,7 +44,7 @@ function WebsiteDesignPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
             What We Can Do <span className="gradient-text">For You</span>
           </h2>
-          <div className="space-y-6 text-left text-lg leading-relaxed text-muted-foreground">
+          <div className="space-y-6 text-left text-lg leading-relaxed text-muted-foreground rounded-lg bg-card/50 backdrop-blur p-6 md:p-8">
             <p>
               Your website is often the first thing people see before they ever call or walk through your door. We build you one that makes your business look as professional and trustworthy as it really is, whether that's a clean, simple site that tells people who you are and how to reach you, or a full online storefront.
             </p>
