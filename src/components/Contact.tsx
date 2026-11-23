@@ -36,7 +36,14 @@ const contactInfo = [
   },
 ];
 
-const Contact = () => {
+interface ContactProps {
+  /** Top padding; defaults to the home page value. */
+  topPaddingClass?: string;
+  /** Drop the section's own background wash and sparkles (page supplies sparkles). */
+  transparentBackground?: boolean;
+}
+
+const Contact = ({ topPaddingClass = "pt-12", transparentBackground = false }: ContactProps = {}) => {
   const { openClipsie } = useClipsie();
   const [formData, setFormData] = useState({
     name: "",
@@ -74,9 +81,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="pt-12 pb-24 relative overflow-hidden">
-      <div className="absolute inset-0 gradient-bg opacity-50" />
-      <Fireflies count={48} />
+    <section id="contact" className={`${topPaddingClass} pb-24 relative overflow-hidden`}>
+      {!transparentBackground && (
+        <>
+          <div className="absolute inset-0 gradient-bg opacity-50" />
+          <Fireflies count={48} />
+        </>
+      )}
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-8">
