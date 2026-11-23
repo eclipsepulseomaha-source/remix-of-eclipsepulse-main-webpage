@@ -34,7 +34,11 @@ function WebsiteDesignPage() {
       </div>
 
       <div className="relative z-10">
-        <PageHeading title="Website Design" bottomPaddingClass="pb-12" transparentBackground />
+        <PageHeading
+          title="Website Design"
+          bottomPaddingClass="pb-6"
+          transparentBackground
+        />
         <section className="px-6 pb-24">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
