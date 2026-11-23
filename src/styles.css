@@ -275,10 +275,10 @@
 
   @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(var(--glow-secondary) / 0.4);
+      box-shadow: 0 0 calc(var(--clipsie-size, 84px) * 20 / 84) hsl(var(--glow-secondary) / 0.4);
     }
     50% {
-      box-shadow: 0 0 40px hsl(var(--glow-secondary) / 0.6);
+      box-shadow: 0 0 calc(var(--clipsie-size, 84px) * 40 / 84) hsl(var(--glow-secondary) / 0.6);
     }
   }
 

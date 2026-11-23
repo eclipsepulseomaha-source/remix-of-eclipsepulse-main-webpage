@@ -72,20 +72,21 @@ const ChatbotWidget = () => {
     <>
       {/* Floating Clipsie 3D button + label */}
       <div
-        style={{ bottom: "10px", right: "18px" }}
         className={cn(
-          "fixed z-50 flex flex-col items-center gap-3 transition-all duration-150",
+          "fixed z-50 flex flex-col items-center gap-[6px] sm:gap-3 transition-all duration-150",
+          "[--clipsie-size:56px] sm:[--clipsie-size:84px]",
+          "bottom-[12px] right-[12px] sm:bottom-[10px] sm:right-[18px]",
           isOpen && "scale-0 opacity-0 pointer-events-none",
         )}
       >
         {/* Button wrapper — needs relative positioning for the shadow base */}
-        <div className="relative h-[84px] w-[84px]">
+        <div className="relative h-[var(--clipsie-size)] w-[var(--clipsie-size)]">
           {/* Glow behind everything */}
           <div
             className="absolute rounded-full pulse-glow"
             style={{
-              width: "84px",
-              height: "84px",
+              width: "var(--clipsie-size)",
+              height: "var(--clipsie-size)",
               top: "0px",
               left: "0px",
               zIndex: 0,
@@ -96,13 +97,15 @@ const ChatbotWidget = () => {
             className="absolute rounded-full"
             style={{
               zIndex: 1,
-              width: "84px",
-              height: "84px",
-              top: "6px",
-              left: "6px",
+              width: "var(--clipsie-size)",
+              height: "var(--clipsie-size)",
+              top: "calc(var(--clipsie-size) * 6 / 84)",
+              left: "calc(var(--clipsie-size) * 6 / 84)",
               background: "hsl(220 10% 12%)",
               boxShadow:
-                "0 6px 20px hsl(0 0% 0% / 0.6), " + "0 12px 40px hsl(0 0% 0% / 0.4), " + "0 2px 6px hsl(0 0% 0% / 0.5)",
+                "0 calc(var(--clipsie-size) * 6 / 84) calc(var(--clipsie-size) * 20 / 84) hsl(0 0% 0% / 0.6), " +
+                "0 calc(var(--clipsie-size) * 12 / 84) calc(var(--clipsie-size) * 40 / 84) hsl(0 0% 0% / 0.4), " +
+                "0 calc(var(--clipsie-size) * 2 / 84) calc(var(--clipsie-size) * 6 / 84) hsl(0 0% 0% / 0.5)",
             }}
           />
           {/* Clickable button face */}
@@ -110,9 +113,9 @@ const ChatbotWidget = () => {
             style={{ zIndex: 2 }}
             onClick={openClipsie}
             className={cn(
-              "relative h-[84px] w-[84px] rounded-full transition-all duration-100 focus:outline-none",
-              "translate-x-[-3px] translate-y-[-3px]",
-              "active:translate-x-[1px] active:translate-y-[1px]",
+              "relative h-[var(--clipsie-size)] w-[var(--clipsie-size)] rounded-full transition-all duration-100 focus:outline-none",
+              "translate-x-[-2px] translate-y-[-2px] sm:translate-x-[-3px] sm:translate-y-[-3px]",
+              "active:translate-x-[0.667px] active:translate-y-[0.667px] sm:active:translate-x-[1px] sm:active:translate-y-[1px]",
             )}
             aria-label="Open chat with Clipsie"
           >
@@ -135,12 +138,12 @@ const ChatbotWidget = () => {
                   "hsl(210 5% 75%) 340deg, " +
                   "hsl(210 4% 82%) 360deg)",
                 boxShadow:
-                  "inset 0 2px 4px hsl(0 0% 100% / 0.5), " +
-                  "inset 0 -3px 6px hsl(0 0% 0% / 0.4), " +
-                  "inset 2px 0 3px hsl(0 0% 100% / 0.2), " +
-                  "inset -2px 0 4px hsl(0 0% 0% / 0.2), " +
-                  "0 4px 12px hsl(0 0% 0% / 0.5), " +
-                  "0 1px 3px hsl(0 0% 0% / 0.4)",
+                  "inset 0 calc(var(--clipsie-size) * 2 / 84) calc(var(--clipsie-size) * 4 / 84) hsl(0 0% 100% / 0.5), " +
+                  "inset 0 calc(var(--clipsie-size) * -3 / 84) calc(var(--clipsie-size) * 6 / 84) hsl(0 0% 0% / 0.4), " +
+                  "inset calc(var(--clipsie-size) * 2 / 84) 0 calc(var(--clipsie-size) * 3 / 84) hsl(0 0% 100% / 0.2), " +
+                  "inset calc(var(--clipsie-size) * -2 / 84) 0 calc(var(--clipsie-size) * 4 / 84) hsl(0 0% 0% / 0.2), " +
+                  "0 calc(var(--clipsie-size) * 4 / 84) calc(var(--clipsie-size) * 12 / 84) hsl(0 0% 0% / 0.5), " +
+                  "0 calc(var(--clipsie-size) * 1 / 84) calc(var(--clipsie-size) * 3 / 84) hsl(0 0% 0% / 0.4)",
               }}
             >
               {/* Brushed metal texture overlay */}
@@ -148,36 +151,36 @@ const ChatbotWidget = () => {
                 className="absolute inset-0 rounded-full opacity-30"
                 style={{
                   background:
-                    "repeating-linear-gradient(135deg, transparent, transparent 2px, hsl(0 0% 100% / 0.08) 2px, transparent 3px), " +
-                    "repeating-linear-gradient(125deg, transparent, transparent 4px, hsl(0 0% 100% / 0.05) 4px, transparent 5px), " +
-                    "repeating-linear-gradient(145deg, transparent, transparent 3px, hsl(0 0% 0% / 0.06) 3px, transparent 4px)",
+                    "repeating-linear-gradient(135deg, transparent, transparent calc(var(--clipsie-size) * 2 / 84), hsl(0 0% 100% / 0.08) calc(var(--clipsie-size) * 2 / 84), transparent calc(var(--clipsie-size) * 3 / 84)), " +
+                    "repeating-linear-gradient(125deg, transparent, transparent calc(var(--clipsie-size) * 4 / 84), hsl(0 0% 100% / 0.05) calc(var(--clipsie-size) * 4 / 84), transparent calc(var(--clipsie-size) * 5 / 84)), " +
+                    "repeating-linear-gradient(145deg, transparent, transparent calc(var(--clipsie-size) * 3 / 84), hsl(0 0% 0% / 0.06) calc(var(--clipsie-size) * 3 / 84), transparent calc(var(--clipsie-size) * 4 / 84))",
                 }}
               />
               {/* Specular highlight — bright arc top-left */}
               <div
                 className="absolute rounded-full"
                 style={{
-                  top: "3px",
-                  left: "6px",
+                  top: "calc(var(--clipsie-size) * 3 / 84)",
+                  left: "calc(var(--clipsie-size) * 6 / 84)",
                   width: "55%",
                   height: "30%",
                   background: "linear-gradient(160deg, hsl(0 0% 100% / 0.6) 0%, hsl(0 0% 100% / 0) 100%)",
                   borderRadius: "50%",
-                  filter: "blur(2px)",
+                  filter: "blur(calc(var(--clipsie-size) * 2 / 84))",
                 }}
               />
               {/* Inner bevel — creates depth between rim and face */}
               <div
                 className="absolute rounded-full"
                 style={{
-                  top: "6px",
-                  left: "6px",
-                  right: "6px",
-                  bottom: "6px",
+                  top: "calc(var(--clipsie-size) * 6 / 84)",
+                  left: "calc(var(--clipsie-size) * 6 / 84)",
+                  right: "calc(var(--clipsie-size) * 6 / 84)",
+                  bottom: "calc(var(--clipsie-size) * 6 / 84)",
                   boxShadow:
-                    "inset 0 2px 5px hsl(0 0% 0% / 0.5), " +
-                    "inset 0 -1px 3px hsl(0 0% 100% / 0.3), " +
-                    "0 1px 2px hsl(0 0% 100% / 0.15)",
+                    "inset 0 calc(var(--clipsie-size) * 2 / 84) calc(var(--clipsie-size) * 5 / 84) hsl(0 0% 0% / 0.5), " +
+                    "inset 0 calc(var(--clipsie-size) * -1 / 84) calc(var(--clipsie-size) * 3 / 84) hsl(0 0% 100% / 0.3), " +
+                    "0 calc(var(--clipsie-size) * 1 / 84) calc(var(--clipsie-size) * 2 / 84) hsl(0 0% 100% / 0.15)",
                   background: "transparent",
                 }}
               />
@@ -185,12 +188,13 @@ const ChatbotWidget = () => {
 
             {/* Inner face — gradient ring + avatar */}
             <div
-              className="absolute rounded-full bg-gradient-to-br from-secondary/80 to-primary/80 p-[2px]"
+              className="absolute rounded-full bg-gradient-to-br from-secondary/80 to-primary/80"
               style={{
-                top: "7px",
-                left: "7px",
-                right: "7px",
-                bottom: "7px",
+                top: "calc(var(--clipsie-size) * 7 / 84)",
+                left: "calc(var(--clipsie-size) * 7 / 84)",
+                right: "calc(var(--clipsie-size) * 7 / 84)",
+                bottom: "calc(var(--clipsie-size) * 7 / 84)",
+                padding: "calc(var(--clipsie-size) * 2 / 84)",
               }}
             >
               <div className="h-full w-full rounded-full overflow-hidden bg-card">
@@ -207,7 +211,7 @@ const ChatbotWidget = () => {
         {/* "Meet Clipsie" label */}
         <button
           onClick={openClipsie}
-          className="px-5 py-2 rounded-xl text-primary-foreground text-sm font-bold text-center hover:opacity-90 transition-opacity cursor-pointer"
+          className="px-[14px] py-[6px] rounded-[10px] text-[12px] leading-[14px] sm:px-5 sm:py-2 sm:rounded-xl sm:text-sm sm:leading-[16px] text-primary-foreground font-bold text-center hover:opacity-90 transition-opacity cursor-pointer"
           style={{
             background: "linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%)",
             boxShadow:
@@ -216,7 +220,6 @@ const ChatbotWidget = () => {
               "0 3px 8px hsl(0 0% 0% / 0.4), " +
               "0 1px 2px hsl(0 0% 0% / 0.3)",
             textShadow: "0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.15)",
-            lineHeight: "16px",
             whiteSpace: "pre-line",
           }}
           aria-label="Meet Clipsie"
