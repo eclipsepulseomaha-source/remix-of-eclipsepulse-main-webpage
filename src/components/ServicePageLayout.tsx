@@ -37,7 +37,7 @@ const ServicePageLayout = ({
         <section className="px-6 pb-24">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
-              {headingPlain}<span className="gradient-text">{headingGradient}</span>
+              {headingPlain}<span className="gradient-text whitespace-nowrap">{headingGradient}</span>
             </h2>
             <div className="space-y-6 text-left text-lg leading-relaxed text-muted-foreground rounded-lg bg-card/50 backdrop-blur p-6 md:p-8">
               {paragraphs.map((p, i) => (
