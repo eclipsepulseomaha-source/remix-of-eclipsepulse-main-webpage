@@ -44,7 +44,10 @@ const About = ({
             >Founders</span>
           </Heading>
           <p className={`text-center text-xl ${showDivider ? "mb-6" : "mb-2"}`}>
-            <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
+            <strong className="text-foreground">
+              <span className="whitespace-nowrap">Curtis Emmanuel Lovegren</span>{" "}
+              <span className="whitespace-nowrap block sm:inline">and Ivan Lovegren</span>
+            </strong>
           </p>
           {showDivider && (
             <div
