@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import PageHeading from "@/components/PageHeading";
+import Fireflies from "@/components/Fireflies";
 
 const TITLE = "Website Design in Omaha, NE | Eclipse Pulse";
 const DESCRIPTION = "Modern, mobile-friendly websites for Omaha small businesses. Eclipse Pulse designs your site, then keeps it running smoothly with monthly management.";
@@ -26,9 +27,15 @@ export const Route = createFileRoute("/website-design")({
 
 function WebsiteDesignPage() {
   return (
-    <>
-      <PageHeading title="Website Design" bottomPaddingClass="pb-12" />
-      <section className="bg-background px-6 pb-24">
+    <div className="relative">
+      {/* Firefly sparkles: same effect as the home page, sitting behind all content */}
+      <div aria-hidden="true" className="absolute inset-0 z-[1] pointer-events-none">
+        <Fireflies count={64} />
+      </div>
+
+      <div className="relative z-10">
+        <PageHeading title="Website Design" bottomPaddingClass="pb-12" transparentBackground />
+        <section className="px-6 pb-24">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
             What We Can Do <span className="gradient-text">For You</span>
@@ -56,7 +63,12 @@ function WebsiteDesignPage() {
             </a>{" "}
             Partner and a member of the eBay Developers Program.
           </p>
-          <h2 className="mt-12 text-center text-xl md:text-2xl font-semibold text-foreground">
+          <h2
+            className="mt-12 text-center text-xl md:text-2xl font-semibold text-foreground italic"
+            style={{
+              textShadow: "0 0 10px rgba(60, 131, 246, 0.55), 0 0 22px rgba(60, 131, 246, 0.35)",
+            }}
+          >
             Let's build the website your business deserves.
           </h2>
           <div className="mt-6 flex justify-center">
@@ -73,7 +85,8 @@ function WebsiteDesignPage() {
             </Link>
           </div>
         </div>
-      </section>
-    </>
+        </section>
+      </div>
+    </div>
   );
 }
