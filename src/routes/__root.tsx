@@ -50,11 +50,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@EclipsePulse" },
-      { name: "twitter:title", content: "Eclipse Pulse | AI Chatbots for Omaha Businesses" },
-      {
-        name: "twitter:description",
-        content: "Smart AI chatbots for Omaha businesses — automating customer support and booking appointments 24/7.",
-      },
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
