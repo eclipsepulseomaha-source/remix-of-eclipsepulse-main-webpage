@@ -9,13 +9,20 @@ interface AboutProps {
   topPaddingClass?: string;
   bottomPaddingClass?: string;
   transparentBackground?: boolean;
+  /** Heading tag for "Founders"; /about uses "h1". */
+  headingLevel?: "h1" | "h2";
+  /** Show the page-heading style divider under the names line. */
+  showDivider?: boolean;
 }
 
 const About = ({
   topPaddingClass = "pt-4",
   bottomPaddingClass = "pb-4",
   transparentBackground = false,
+  headingLevel = "h2",
+  showDivider = false,
 }: AboutProps) => {
+  const Heading = headingLevel;
   return (
     <section
       id="about"
@@ -28,17 +35,31 @@ const About = ({
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Section title - centered on full page */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center">
+          <Heading className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-center">
             <span 
               className="bg-clip-text text-transparent"
               style={{
                 backgroundImage: 'linear-gradient(to bottom right, hsl(var(--secondary)) 0%, hsl(var(--secondary)) 25%, hsl(var(--primary)) 100%)'
               }}
             >Founders</span>
-          </h2>
-          <p className="text-center text-xl mb-2">
+          </Heading>
+          <p className={`text-center text-xl ${showDivider ? "mb-6" : "mb-2"}`}>
             <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
           </p>
+          {showDivider && (
+            <div
+              aria-hidden="true"
+              className="mx-auto mb-6"
+              style={{
+                height: "1px",
+                width: "60%",
+                maxWidth: "480px",
+                opacity: 0.8,
+                background:
+                  "linear-gradient(to right, transparent 0%, #3C83F6 20%, #F99E1F 50%, #F97015 80%, transparent 100%)",
+              }}
+            />
+          )}
           <h3
             className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8 italic"
             style={{
