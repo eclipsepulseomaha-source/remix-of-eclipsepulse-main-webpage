@@ -84,8 +84,9 @@ const Contact = () => {
             Ready to <span className="gradient-text">Get Started?</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Let's chat about how an AI chatbot can help your business. 
-            No pressure, no tech speak—just an honest conversation.
+            Let's talk about what your business needs, whether it's a new
+            website, an AI chatbot, a quick fix, or fresh graphics. No pressure,
+            no tech speak, just an honest conversation.
           </p>
         </div>
 
