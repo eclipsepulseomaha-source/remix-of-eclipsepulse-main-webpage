@@ -18,10 +18,10 @@ const About = () => {
               }}
             >Founders</span>
           </h2>
-          <p className="text-center mb-2">
+          <p className="text-center text-xl mb-2">
             <strong className="text-foreground">Curtis Emmanuel Lovegren and Ivan Lovegren</strong>
           </p>
-          <h3 className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8">
+          <h3 className="text-xl md:text-2xl font-semibold text-foreground text-center mb-8 italic">
             Rooted in Omaha. Built for Omaha Businesses.
           </h3>
 
