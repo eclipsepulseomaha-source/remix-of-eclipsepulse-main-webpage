@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { X, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
-import clipsieAvatar from "@/assets/clipsie-avatar.png";
+import clipsieAvatar from "@/assets/Clipsie_avatar_centered.png.asset.json";
 import clipsieChatAvatar from "@/assets/clipsie-chat-avatar.png";
 import { useClipsie } from "@/components/ClipsieContext";
 
@@ -199,9 +199,9 @@ const ChatbotWidget = () => {
             >
               <div className="h-full w-full rounded-full overflow-hidden bg-card">
                 <img
-                  src={clipsieAvatar}
+                  src={clipsieAvatar.url}
                   alt="Clipsie chatbot avatar"
-                  className="h-full w-full object-cover scale-[1.17] translate-y-[7%] -translate-x-[8%]"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
             </div>
