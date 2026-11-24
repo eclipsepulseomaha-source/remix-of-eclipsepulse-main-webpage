@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { X, Send, Mic } from "lucide-react";
+import { X, Send, Mic, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import clipsieAvatar from "@/assets/Clipsie_avatar_centered.png.asset.json";
@@ -31,6 +31,11 @@ const ChatbotWidget = () => {
   const [micError, setMicError] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const recognitionRef = useRef<any>(null);
+  const inputRef = useRef("");
+  inputRef.current = input;
+  // How the current listening session should end: null = browser stopped on its own (auto-send)
+  const endModeRef = useRef<null | "done" | "cancel" | "error">(null);
+  const sessionSentRef = useRef(false);
   const micErrorTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -49,9 +54,26 @@ const ChatbotWidget = () => {
     micErrorTimer.current = setTimeout(() => setMicError(false), 4000);
   };
 
+  const sendSpokenOnce = () => {
+    if (sessionSentRef.current) return;
+    sessionSentRef.current = true;
+    const text = inputRef.current.trim();
+    if (!text) return;
+    void handleSend(text);
+  };
+
+  const handleDone = () => {
+    endModeRef.current = "done";
+    recognitionRef.current?.stop();
+    setListening(false);
+    sendSpokenOnce();
+  };
+
   const toggleListening = () => {
     if (listening) {
+      endModeRef.current = "cancel";
       recognitionRef.current?.stop();
+      setListening(false);
       return;
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -61,7 +83,7 @@ const ChatbotWidget = () => {
     const recognition = new SR();
     recognition.lang = "en-US";
     recognition.interimResults = true;
-    recognition.continuous = false;
+    recognition.continuous = true;
     recognition.maxAlternatives = 1;
     const base = input.trim();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -71,13 +93,24 @@ const ChatbotWidget = () => {
         spoken += event.results[i][0].transcript;
       }
       spoken = spoken.trim();
-      setInput(base && spoken ? `${base} ${spoken}` : base || spoken);
+      const next = base && spoken ? `${base} ${spoken}` : base || spoken;
+      inputRef.current = next;
+      setInput(next);
     };
     recognition.onerror = () => {
+      endModeRef.current = "error";
       showMicError();
       setListening(false);
     };
-    recognition.onend = () => setListening(false);
+    recognition.onend = () => {
+      setListening(false);
+      if (recognitionRef.current !== recognition) return;
+      recognitionRef.current = null;
+      // Browser stopped on its own → auto-send once (Done already sent; cancel/error never send)
+      if (endModeRef.current === null) sendSpokenOnce();
+    };
+    endModeRef.current = null;
+    sessionSentRef.current = false;
     recognitionRef.current = recognition;
     try {
       recognition.start();
@@ -92,11 +125,12 @@ const ChatbotWidget = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleSend = async () => {
-    if (!input.trim()) return;
+  const handleSend = async (override?: string) => {
+    const text = (override ?? input).trim();
+    if (!text) return;
     const userMsg: Message = {
       id: Date.now(),
-      text: input.trim(),
+      text,
       sender: "user",
     };
     setMessages((prev) => [...prev, userMsg]);
@@ -349,7 +383,7 @@ const ChatbotWidget = () => {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              handleSend();
+              void handleSend();
             }}
             className="flex items-center gap-2"
           >
@@ -378,6 +412,17 @@ const ChatbotWidget = () => {
                 <Mic className="h-4 w-4" />
               </button>
             )}
+            {listening ? (
+              <button
+                type="button"
+                onClick={handleDone}
+                aria-label="Done, send message"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all active:translate-y-[1px]"
+                style={{ background: "#F97015", color: "#080A0C" }}
+              >
+                <Check className="h-4 w-4" />
+              </button>
+            ) : (
             <button
               type="submit"
               disabled={!input.trim()}
@@ -395,6 +440,7 @@ const ChatbotWidget = () => {
             >
               <Send className="h-4 w-4" />
             </button>
+            )}
           </form>
           {micError && (
             <p className="mt-2 text-xs text-muted-foreground" role="status">
