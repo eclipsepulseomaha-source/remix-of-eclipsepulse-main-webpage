@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { X, Send } from "lucide-react";
+import { X, Send, Mic } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import clipsieAvatar from "@/assets/Clipsie_avatar_centered.png.asset.json";
@@ -26,6 +26,67 @@ const ChatbotWidget = () => {
   const [input, setInput] = useState("");
   const [sessionId] = useState(() => crypto.randomUUID());
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [speechSupported, setSpeechSupported] = useState(false);
+  const [listening, setListening] = useState(false);
+  const [micError, setMicError] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionRef = useRef<any>(null);
+  const micErrorTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    setSpeechSupported(Boolean(w.SpeechRecognition || w.webkitSpeechRecognition));
+    return () => {
+      recognitionRef.current?.abort?.();
+      if (micErrorTimer.current) clearTimeout(micErrorTimer.current);
+    };
+  }, []);
+
+  const showMicError = () => {
+    setMicError(true);
+    if (micErrorTimer.current) clearTimeout(micErrorTimer.current);
+    micErrorTimer.current = setTimeout(() => setMicError(false), 4000);
+  };
+
+  const toggleListening = () => {
+    if (listening) {
+      recognitionRef.current?.stop();
+      return;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    const SR = w.SpeechRecognition || w.webkitSpeechRecognition;
+    if (!SR) return;
+    const recognition = new SR();
+    recognition.lang = "en-US";
+    recognition.interimResults = true;
+    recognition.continuous = false;
+    recognition.maxAlternatives = 1;
+    const base = input.trim();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    recognition.onresult = (event: any) => {
+      let spoken = "";
+      for (let i = 0; i < event.results.length; i++) {
+        spoken += event.results[i][0].transcript;
+      }
+      spoken = spoken.trim();
+      setInput(base && spoken ? `${base} ${spoken}` : base || spoken);
+    };
+    recognition.onerror = () => {
+      showMicError();
+      setListening(false);
+    };
+    recognition.onend = () => setListening(false);
+    recognitionRef.current = recognition;
+    try {
+      recognition.start();
+      setListening(true);
+    } catch {
+      showMicError();
+      setListening(false);
+    }
+  };
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -297,8 +358,26 @@ const ChatbotWidget = () => {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type a message..."
               aria-label="Type a message"
-              className="flex-1 rounded-xl border border-border bg-muted/50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+              className="min-w-0 flex-1 rounded-xl border border-border bg-muted/50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
             />
+            {speechSupported && (
+              <button
+                type="button"
+                onClick={toggleListening}
+                aria-label={listening ? "Stop listening" : "Speak your message"}
+                className={cn(
+                  "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-all",
+                  listening && "motion-safe:animate-pulse",
+                )}
+                style={{
+                  background: listening ? "#F97015" : "#0E1115",
+                  borderColor: listening ? "#F97015" : "#272C35",
+                  color: listening ? "#080A0C" : "#F8FAFC",
+                }}
+              >
+                <Mic className="h-4 w-4" />
+              </button>
+            )}
             <button
               type="submit"
               disabled={!input.trim()}
@@ -317,6 +396,11 @@ const ChatbotWidget = () => {
               <Send className="h-4 w-4" />
             </button>
           </form>
+          {micError && (
+            <p className="mt-2 text-xs text-muted-foreground" role="status">
+              Microphone not available. You can type your message instead.
+            </p>
+          )}
         </div>
       </div>
     </>
