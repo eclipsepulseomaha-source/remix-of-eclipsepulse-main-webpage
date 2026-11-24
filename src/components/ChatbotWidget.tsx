@@ -20,31 +20,6 @@ const INITIAL_MESSAGES: Message[] = [
   },
 ];
 
-const lerpHex = (a: string, b: string, t: number) => {
-  const pa = [1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16));
-  const pb = [1, 3, 5].map((i) => parseInt(b.slice(i, i + 2), 16));
-  return (
-    "#" +
-    pa
-      .map((v, i) => Math.round(v + ((pb[i] ?? v) - v) * t).toString(16).padStart(2, "0"))
-      .join("")
-      .toUpperCase()
-  );
-};
-
-const buildSideShadow = (depth: number) => {
-  const layers = Array.from({ length: depth }, (_, i) => {
-    const color = lerpHex("#A9AEB4", "#3E434A", depth === 1 ? 1 : i / (depth - 1));
-    return `${i + 1}px ${i + 1}px 0 0 ${color}`;
-  });
-  const soft = [
-    `${depth}px ${depth + 6}px 20px rgba(0,0,0,0.6)`,
-    `${depth}px ${depth + 12}px 40px rgba(0,0,0,0.4)`,
-    `${depth}px ${depth + 2}px 6px rgba(0,0,0,0.5)`,
-  ];
-  return [...layers, ...soft].join(", ");
-};
-
 const ChatbotWidget = () => {
   const { isOpen, openClipsie, closeClipsie } = useClipsie();
   const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
@@ -117,34 +92,13 @@ const ChatbotWidget = () => {
               zIndex: 0,
             }}
           />
-          {/* 3D side — cylinder wall built from stacked 1px extrusion layers */}
-          {([
-            { depth: 6, offset: 2, cls: "sm:hidden" },
-            { depth: 9, offset: 3, cls: "hidden sm:block" },
-          ] as const).map(({ depth, offset, cls }) => (
-            <div
-              key={depth}
-              aria-hidden="true"
-              className={cn("absolute rounded-full", cls)}
-              style={{
-                zIndex: 1,
-                width: "var(--clipsie-size)",
-                height: "var(--clipsie-size)",
-                top: `-${offset}px`,
-                left: `-${offset}px`,
-                background: "#A9AEB4",
-                boxShadow: buildSideShadow(depth),
-              }}
-            />
-          ))}
           {/* Clickable button face */}
           <button
             style={{ zIndex: 2 }}
             onClick={openClipsie}
+            onTouchStart={() => {}}
             className={cn(
-              "relative h-[var(--clipsie-size)] w-[var(--clipsie-size)] rounded-full transition-all duration-100 focus:outline-none",
-              "translate-x-[-2px] translate-y-[-2px] sm:translate-x-[-3px] sm:translate-y-[-3px]",
-              "active:translate-x-[0.667px] active:translate-y-[0.667px] sm:active:translate-x-[1px] sm:active:translate-y-[1px]",
+              "clipsie-extrude relative h-[var(--clipsie-size)] w-[var(--clipsie-size)] rounded-full focus:outline-none",
             )}
             aria-label="Open chat with Clipsie"
           >

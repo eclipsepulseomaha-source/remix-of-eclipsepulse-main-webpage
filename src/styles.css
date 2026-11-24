@@ -334,3 +334,25 @@
     }
   }
 }
+
+/* Clipsie floating button: extrusion wall lives on the button itself */
+.clipsie-extrude {
+  border-radius: 9999px;
+  transform: translate(-2px, -2px);
+  box-shadow: 1px 1px 0 0 #5F656C, 2px 2px 0 0 #4F545A, 3px 3px 0 0 #3E4348, 4px 4px 0 0 #2E3237, 5px 5px 0 0 #1E2125, 0 9px 16px rgba(0,0,0,0.55), 0 15px 30px rgba(0,0,0,0.35);
+  transition: transform 100ms, box-shadow 100ms;
+}
+.clipsie-extrude:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 0 #1E2125, 0 2px 4px rgba(0,0,0,0.5);
+}
+@media (min-width: 640px) {
+  .clipsie-extrude {
+    transform: translate(-3px, -3px);
+    box-shadow: 1px 1px 0 0 #5F656C, 2px 2px 0 0 #565B62, 3px 3px 0 0 #4C5258, 4px 4px 0 0 #43484E, 5px 5px 0 0 #3A3E43, 6px 6px 0 0 #313439, 7px 7px 0 0 #272B2F, 8px 8px 0 0 #1E2125, 0 12px 16px rgba(0,0,0,0.55), 0 18px 30px rgba(0,0,0,0.35);
+  }
+  .clipsie-extrude:active {
+    transform: translate(4px, 4px);
+    box-shadow: 1px 1px 0 0 #1E2125, 0 2px 4px rgba(0,0,0,0.5);
+  }
+}
