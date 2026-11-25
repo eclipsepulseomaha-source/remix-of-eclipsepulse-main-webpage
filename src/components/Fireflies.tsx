@@ -106,7 +106,7 @@ const Fireflies = ({ count = 18 }: FirefliesProps) => {
   }, [fireflies]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
+    <div className="firefly-field absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
       <style>{styleSheet}</style>
       {fireflies.map((fly) => (
         <div
@@ -115,8 +115,10 @@ const Fireflies = ({ count = 18 }: FirefliesProps) => {
           style={{
             left: `${fly.x}%`,
             top: `${fly.y}%`,
-            width: fly.size * 3,
-            height: fly.size * 3,
+            // Each sparkle keeps its own random size; --firefly-scale shrinks
+            // the whole sparkle (core + glow) on phones only.
+            width: `calc(${fly.size * 3}px * var(--firefly-scale, 1))`,
+            height: `calc(${fly.size * 3}px * var(--firefly-scale, 1))`,
             animation: `firefly-path-${fly.id} ${fly.animationDuration}s ease-in-out infinite, firefly-glow ${fly.glowDuration}s ease-in-out ${fly.glowDelay}s infinite`,
           }}
         >

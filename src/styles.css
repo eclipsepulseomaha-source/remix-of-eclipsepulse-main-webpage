@@ -335,6 +335,15 @@
   }
 }
 
+/* Firefly sparkles: shrink every sparkle (core and its glow) to 68% of its own
+   size below 640px. The scale is a custom property so each sparkle keeps its own
+   randomly chosen size; 640px and wider stay at 1 (unchanged). */
+@media (max-width: 639.98px) {
+  .firefly-field {
+    --firefly-scale: 0.68;
+  }
+}
+
 /* Clipsie floating button: extrusion wall lives on the button itself */
 .clipsie-extrude {
   border-radius: 9999px;
